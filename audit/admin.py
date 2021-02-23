@@ -106,7 +106,7 @@ class BusinessProcessAdmin(BaseAdmin):
     def organization(self, obj):
         for o in obj.yourorganization_set.all():
             return admin_change_link(o, o)
-    organization.short_description = _("Organization")
+    organization.short_description = _("Empresa")
 
     def owner_link(self, obj):
         return admin_change_link(obj.owner, obj.owner)
@@ -114,7 +114,7 @@ class BusinessProcessAdmin(BaseAdmin):
 
     def activity_link(self, obj):
         return self.admin_changelist_count(obj.activities)
-    activity_link.short_description = _("Processing Activities")
+    activity_link.short_description = _("Atividades de processamento")
 
 
 @admin.register(models.DataCategory)
@@ -263,8 +263,8 @@ class YourOrganizationAdmin(OrganizationAdmin):
     business_processes.short_description = _("Business Processes")
 
     def report(self, obj):
-        return link(url=reverse('report', kwargs={'org_pk': obj.pk}), target_blank=True, text=_("Create"))
-    report.short_description = _("PDF Report")
+        return link(url=reverse('report', kwargs={'org_pk': obj.pk}), target_blank=True, text=_("Criar"))
+    report.short_description = _("Relatório em PDF")
 
 
 

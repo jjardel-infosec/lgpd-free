@@ -24,7 +24,7 @@ import PyPDF2
 from collections import OrderedDict
 
 HINT_TYPES = OrderedDict([
-                            ('suggestion', _("Sugestoes")),
+                            ('suggestion', _("Sugestões")),
                             ('issue', _("Problemas")),
                             ('warning', _("Avisos")),
                         ])
@@ -92,16 +92,16 @@ class NameDesc(Base):
     name = models.CharField(unique=True,
                             max_length=100,
                             verbose_name=_("Nome"))
-    description = models.TextField(verbose_name=_("Descricao"), blank=True)
+    description = models.TextField(verbose_name=_("Descrição"), blank=True)
 
     def short_description(self):
         return truncatewords(self.description, 50)
-    short_description.short_description = _("Descricao")
+    short_description.short_description = _("Descrição")
 
     def get_hints(self):
         hints = HintList()
         if not self.description:
-            hints.append(Hint(obj=self, text=_("Descricao ausente em"), hint_type='warning'))
+            hints.append(Hint(obj=self, text=_("Descrição ausente em"), hint_type='warning'))
         return hints
 
     def __str__(self):
@@ -112,13 +112,13 @@ class NameDesc(Base):
 
 
 class Organization(NameDesc):
-    email = models.EmailField(verbose_name=_("Email"))
-    address = models.CharField(max_length=50, verbose_name=_("Endereco"))
-    country = models.CharField(max_length=200, verbose_name=_("Pais"))
+    email = models.EmailField(verbose_name=_("E-mail"))
+    address = models.CharField(max_length=50, verbose_name=_("Endereço"))
+    country = models.CharField(max_length=200, verbose_name=_("País"))
     telephone = models.CharField(max_length=50, verbose_name=_("Telefone"))
     statute = models.CharField(max_length=200, verbose_name=_("Estatuto"))
-    third_country = models.BooleanField(verbose_name=_("Pais Terceiro - Transferencia Internacioanl"), help_text=_("Mark this field if the organization resides in a country outside of the European Union (EU) and the European Economic Area (EEA)."))
-    international = models.BooleanField(verbose_name=_("Internacional"), help_text=_("Mark this field if the organization and its subordinate bodies are governed by public international law"))
+    third_country = models.BooleanField(verbose_name=_("País Terceiro - Transferência Internacioanl"), help_text=_("Marque este campo se a organização residir em um país fora do território Nacional"))
+    international = models.BooleanField(verbose_name=_("Internacional"), help_text=_("Marque este campo se a organização e seus órgãos subordinados são regidos pelo direito internacional público"))
 
     class Meta:
         abstract = True
@@ -127,7 +127,7 @@ def media_file_name(instance, filename):
     return 'documents/{}.pdf'.format(instance.name)
 
 class PDFDocument(NameDesc):
-    document = models.FileField(verbose_name=_("Document File"), upload_to=media_file_name)
+    document = models.FileField(verbose_name=_("Arquivo de documento"), upload_to=media_file_name)
     md5sum = models.CharField(blank=True, verbose_name=_("MD5Sum"), max_length=36)
 
     def clean(self): # PDF file validation
@@ -146,13 +146,13 @@ class PDFDocument(NameDesc):
 
 class List(NameDesc):
     classification = models.CharField(blank=True, max_length=100, verbose_name=_("Classification"),
-                                      help_text=_("Insira uma classificacao geral para esta entrada (caso exista)"))
+                                      help_text=_("Insira uma classificação geral para esta entrada (caso exista)"))
     article = models.PositiveIntegerField(null=True, blank=True,
                                           verbose_name=_("LGPD Artigo"),
                                           help_text=_("Referente ao Artigo da  LGPD  (caso exista)"))
     url = models.URLField(blank=True,
                           verbose_name=_("URL de referência"),
-                          help_text=_("URL de referencia (caso exista)")
+                          help_text=_("URL de referência (caso exista)")
                           )
 
     def __str__(self):
@@ -196,23 +196,23 @@ class DataCategory(List):
 
 class ProcessingActivityClassificationDocument(PDFDocument):
     class Meta:
-        verbose_name = _("Documento de Classificacao de Atividades de Processamento")
-        verbose_name_plural = _("Documento de Classificacao de Atividades de Processamento")
+        verbose_name = _("Documento de Classificação de Atividades de Processamento")
+        verbose_name_plural = _("Documento de Classificação de Atividades de Processamento")
 
 
 class ProcessingActivityClassificationLevel(List):
     document = models.ForeignKey(ProcessingActivityClassificationDocument, null=True, on_delete=models.DO_NOTHING,
-                                 verbose_name=_("Documento de Classificacao de Atividades de Processamento"))
+                                 verbose_name=_("Documento de Classificação de Atividades de Processamento"))
 
     class Meta:
-        verbose_name = _("Nivel de classificacao da atividade de processamento")
-        verbose_name_plural = _("Nivel de classificacao da atividade de processamento")
+        verbose_name = _("Nivel de Classificação da atividade de processamento")
+        verbose_name_plural = _("Nivel de Classificação da atividade de processamento")
 
 
 class RecipientCategory(List):
     class Meta:
-        verbose_name = _("Categoria de Destinatario")
-        verbose_name_plural = _("Categoria de Destinatario")
+        verbose_name = _("Categoria de Destinatário")
+        verbose_name_plural = _("Categoria de Destinatário")
 
 
 class NatureOfTransferToThirdCountry(List):
@@ -222,10 +222,10 @@ class NatureOfTransferToThirdCountry(List):
 
 
 class DataSubjectCategory(List):
-    vulnerable = models.BooleanField(verbose_name=_("Categoria Vulneravel"),
-                                     help_text=_("Indica se os titulares dos dados sao considerados uma categoria vulneravel. "
-                                         "Marque este sinalizador se os titulares dos dados envolvidos estiverem em uma situacao em que haja falta de "
-                                         "paridade na relacao entre o titular dos dados e o controlador, como filhos, funcionarios, pacientes, etc."
+    vulnerable = models.BooleanField(verbose_name=_("Categoria Vulnerável"),
+                                     help_text=_("Indica se os titulares dos dados sao considerados uma categoria Vulnerável. "
+                                         "Marque este sinalizador se os titulares dos dados envolvidos estiverem em uma situação em que haja falta de "
+                                         "paridade na relação entre o titular dos dados e o controlador, como filhos, funcionarios, pacientes, etc."
                                          "Desmarque este sinalizador se nenhuma das categorias mencionadas acima estiver envolvida."))
 
     class Meta:
@@ -275,7 +275,7 @@ class AuditUser(Base):
         abstract = True
 
 class DataProtectionOfficer(AuditUser):
-    address = models.CharField(max_length=50, verbose_name=_("Endereco"))
+    address = models.CharField(max_length=50, verbose_name=_("Endereço"))
     telephone = models.CharField(max_length=50, verbose_name=_("Telefone"))
     staff = models.BooleanField(verbose_name=_("Membro da equipe"),
                                 help_text=_('O DPO faz parte da equipe da empresa do controlador?'))
@@ -283,7 +283,7 @@ class DataProtectionOfficer(AuditUser):
     def get_hints(self):
         hints = super().get_hints()
         if self.staff:
-            hints.append(Hint(obj=self, text=_("O DPO faz parte da equipe da empresa controladora. Voce deve ser capaz de demonstrar que o DPO ser uma pessoa independente."), hint_type='warning'))
+            hints.append(Hint(obj=self, text=_("O DPO faz parte da equipe da empresa controladora. Você deve ser capaz de demonstrar que o DPO ser uma pessoa independente."), hint_type='warning'))
         return hints
 
     class Meta:
@@ -293,8 +293,8 @@ class DataProtectionOfficer(AuditUser):
 
 class DPIA(PDFDocument):
     class Meta:
-        verbose_name = _("Relatorio de Impacto a Protecao de Dados. (DPIA / RIPD)")
-        verbose_name_plural = _("Relatorio de Impacto a Protecao de Dados. (DPIAs / RIPDs)")
+        verbose_name = _("Relatório de Impacto a Protecao de Dados. (DPIA / RIPD)")
+        verbose_name_plural = _("Relatório de Impacto a Protecao de Dados. (DPIAs / RIPDs)")
 
 
 class DataSubjectRights(PDFDocument):
@@ -345,38 +345,38 @@ class DataManagementPolicy(NameDesc, CommonRiskHint):
                                         "faca upload do contrato que regula esta transferência de dados e informacoes relevantes sobre cada empresa terceirizada.."),
                                     blank=True)
     retention = models.IntegerField(null=True, blank=True, verbose_name=_("Período de retenção para os dados processados, em dias"))
-    risk_mitigation = models.TextField(blank=True, verbose_name=_("Risk Mitigation Measures"),
-                                        help_text=_("Information about the risk mitigation measures related to the data processing, against Data Breaches."))
-    risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Residual Risk"), choices=RISK_CHOICES,
-                                            help_text=_("Indicate the residual risk to the fundamental rights and freedoms of data subjects, "
-                                            "given the mitigation measures that have been put in place."))
+    risk_mitigation = models.TextField(blank=True, verbose_name=_("Medidas de mitigação de risco"),
+                                        help_text=_("Informações sobre as medidas de mitigação de risco relacionadas ao processamento de dados, contra violações de dados."))
+    risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Risco Residual" choices=RISK_CHOICES,
+                                            help_text=_("Indique o risco residual para os direitos e liberdades fundamentais dos titulares dos dados, "
+                                            "dadas as medidas de mitigação que foram postas em prática."))
     subject_rights = models.ForeignKey(DataSubjectRights, null=True, blank=True, on_delete=models.DO_NOTHING,
-                            verbose_name=_("Data Subject Rights"),
-                            help_text=_("Reference the documents that determine the procedures intended to guard the rights of data subjects. "
-                                        "The document should also indicate which special measures have been taken to enforce/support " 
-                                        "the exercising of the rights of data subjects."))
-    subject_notification = models.TextField(blank=True, verbose_name=_("Data Subject Notification"),
-                                      help_text=_("Indicate how data subjects are notified that their data have been registered."))
-    comments = models.TextField(blank=True, verbose_name=_("Comments"),
-                                help_text=_("Please put any comments to the data management policy."))
+                            verbose_name=_("Direitos do Titular dos Dados"),
+                            help_text=_("Consulte os documentos que determinam os procedimentos destinados a proteger os direitos dos titulares dos dados. "
+                                        "O documento também deve indicar quais medidas especiais foram tomadas para fazer cumprir / apoiar " 
+                                        "o exercício dos direitos dos titulares dos dados."))
+    subject_notification = models.TextField(blank=True, verbose_name=_("Notificação do Titular dos Dados"),
+                                      help_text=_("Indique como os titulares dos dados são notificados de que seus dados foram registrados."))
+    comments = models.TextField(blank=True, verbose_name=_("Comentários"),
+                                help_text=_("Por favor, coloque comentários sobre a política de gerenciamento de dados."))
 
     def get_hints(self):
         hints = super().get_hints()
         if self.risk >= 2:
-            hints.append(Hint(obj=self, text=_("Mid/high residual data management risk for"), hint_type='issue'))
+            hints.append(Hint(obj=self, text=_("Risco Médio/alto de gerenciamento de dados residuais  para"), hint_type='issue'))
         if self.retention is None:
             hints.append(Hint(obj=self,
-                              text=_("No retention value specified for"),
+                              text=_("Nenhum valor de retenção especificado para"),
                               hint_type='issue'))
         if self.subject_rights:
             hints.extend(self.subject_rights.get_hints())
         else:
             hints.append(Hint(obj=self,
-                              text=_("Missing description of the procedures adopted to safeguard the rights of data subjects on"),
+                              text=_("Falta descrição dos procedimentos adotados para salvaguardar os direitos dos titulares dos dados em"),
                               hint_type='warning'))
         if not self.subject_notification:
             hints.append(Hint(obj=self,
-                              text=_("Missing description of the notification procedures to data subjects for"),
+                              text=_("Falta descrição dos procedimentos de notificação aos titulares dos dados para"),
                               hint_type='warning'))
 
         for contract in self.processor_contracts.all():
@@ -385,86 +385,86 @@ class DataManagementPolicy(NameDesc, CommonRiskHint):
         return hints
 
     class Meta:
-        verbose_name = _("Data Management Policy")
-        verbose_name_plural = _("Data Management Policies")
+        verbose_name = _("Política de Gestão de Dados")
+        verbose_name_plural = _("Política de Gestão de Dados")
 
 
 class DataBreachDetection(NameDesc, CommonRiskHint):
-    risk_mitigation = models.TextField(blank=True, verbose_name=_("Risk Mitigation Measures"),
-                                        help_text=_("Information about the risk mitigation measures related to the detection of data breaches"))
-    risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Residual Risk"), choices=RISK_CHOICES,
-                                            help_text=_("Indicate the residual risk of missing a data breach due to lacking detection measures/technology"))
-    comments = models.TextField(blank=True, verbose_name=_("Comments"),
-                                help_text=_("Please put any comments to the data management policy."))
+    risk_mitigation = models.TextField(blank=True, verbose_name=_("Medidas de mitigação de risco"),
+                                        help_text=_("Informações sobre as medidas de mitigação de risco relacionadas à detecção de violações de dados"))
+    risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Risco residual"), choices=RISK_CHOICES,
+                                            help_text=_("Indique o risco residual de perder uma violação de dados devido à falta de medidas / tecnologia de detecção"))
+    comments = models.TextField(blank=True, verbose_name=_("Comentários"),
+                                help_text=_("Por favor, coloque comentários sobre a política de gerenciamento de dados."))
 
     def get_hints(self):
         hints = super().get_hints()
         if self.risk >= 2:
-            hints.append(Hint(obj=self, text=_("Mid/high residual risk of missing data breaches for"), hint_type='issue'))
+            hints.append(Hint(obj=self, text=_("Risco residual Médio/Alto de violação de dados perdidos para"), hint_type='issue'))
         return hints
 
     class Meta:
-        verbose_name = _("Data Breach Detection")
-        verbose_name_plural = _("Data Breach Detection")
+        verbose_name = _("Detecção de violação de dados")
+        verbose_name_plural = _("Detecção de violação de dados")
 
 
 class DataBreachResponse(NameDesc, CommonRiskHint):
-    risk_mitigation = models.TextField(blank=True, verbose_name=_("Risk Mitigation Measures"),
-                                        help_text=_("Information about the risk mitigation measures for the response to data breaches. "
-                                                    "To this end, a suitable incident response plan should be put in place, that include the"
-                                                    "mandatory notification of data breaches to supervisory authority and all involved parties."))
-    risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Residual Risk"), choices=RISK_CHOICES,
-                                            help_text=_("Indicate the residual risk of not responding properly to a data breach due to lacking detection measures/technology."))
-    comments = models.TextField(blank=True, verbose_name=_("Comments"),
-                                help_text=_("Please put any comments to the data management policy."))
+    risk_mitigation = models.TextField(blank=True, verbose_name=_("Medidas de mitigação de risco"),
+                                        help_text=_("Informações sobre as medidas de mitigação de risco para a resposta a violações de dados. "
+                                                    "Para este fim, um plano de resposta a incidentes adequado deve ser colocado em prática, incluindo o"
+                                                    "notificação obrigatória de violações de dados à autoridade supervisora ​​e todas as partes envolvidas."))
+    risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Risco Residual"), choices=RISK_CHOICES,
+                                            help_text=_("Indique o risco residual de não responder adequadamente a uma violação de dados devido à falta de medidas / tecnologia de detecção."))
+    comments = models.TextField(blank=True, verbose_name=_("Comentários"),
+                                help_text=_("Por favor, coloque comentários sobre a política de gerenciamento de dados."))
 
 
     def get_hints(self):
         hints = super().get_hints()
         if self.risk >= 2:
-            hints.append(Hint(obj=self, text=_("Mid/high residual risk for data breach response on"), hint_type='issue'))
+            hints.append(Hint(obj=self, text=_("Risco residual Médio/Alto para resposta à violação de dados em"), hint_type='issue'))
         return hints
 
     class Meta:
-        verbose_name = _("Incident Response Plan")
-        verbose_name_plural = _("Incident Response Plan")
+        verbose_name = _("Plano de Resposta a Incidentes")
+        verbose_name_plural = _("Plano de Resposta a Incidentes")
 
 
 class Data(NameDesc):
     category = models.ForeignKey(DataCategory, on_delete=models.DO_NOTHING,
-                                 verbose_name=_("Data Category"))
+                                 verbose_name=_("Categoria de Dados"))
     subject_category = models.ManyToManyField(DataSubjectCategory,
-                                              verbose_name=_("Data Subject Category"))
-    source = models.TextField(blank=True, verbose_name=_("Original Data Source"),
-                              help_text=_("Indicate the source of the data if not the data subjects themselves."))
-    comments = models.TextField(verbose_name=_("Comments"),
-                                help_text=_("Please put any comments to the data audit."),
+                                              verbose_name=_("Categoria de Assunto de Dados"))
+    source = models.TextField(blank=True, verbose_name=_("Fonte original dos dados"),
+                              help_text=_("Indique a fonte dos dados, se não os próprios titulares dos dados."))
+    comments = models.TextField(verbose_name=_("Comentários"),
+                                help_text=_("Por favor, coloque quaisquer comentários para a auditoria de dados."),
                                 blank=True)
-    risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Inherent Risk"), choices=RISK_CHOICES,
-                                       help_text=_("Indicate the inherent risk to the fundamental rights and freedoms of data subjects associated to the data audit."))
+    risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Risco inerente"), choices=RISK_CHOICES,
+                                       help_text=_("Indique o risco inerente aos direitos e liberdades fundamentais dos titulares dos dados associados à auditoria de dados."))
     management = models.ForeignKey(DataManagementPolicy, null=True, blank=True, on_delete=models.DO_NOTHING,
-                                   verbose_name=_("Data Management Policy"))
+                                   verbose_name=_("Política de Gestão de Dados"))
     breach_detection = models.ForeignKey(DataBreachDetection, null=True, blank=True,
-                                         verbose_name=_("Data Breach Detection"),
+                                         verbose_name=_("Detecção de violação de dados"),
                                    on_delete=models.DO_NOTHING,)
     breach_response = models.ForeignKey(DataBreachResponse, null=True, blank=True,
-                                        verbose_name=_("Incident Response Plan"),
+                                        verbose_name=_("Plano de Resposta a Incidentes"),
                                    on_delete=models.DO_NOTHING,)
     dpia = models.ForeignKey(DPIA, null=True, blank=True, on_delete=models.DO_NOTHING,
-                             verbose_name=_("Data protection Impact Assessment"),
-                             help_text=_("If the processing activity probably entails a high risk for the fundamental "
-                                         "rights and freedoms of data subjects, a DPIA must be completed (GDPR Article 35)."))
+                             verbose_name=_("Relatório de Impacto à Proteção de Dados"),
+                             help_text=_("Se a atividade de processamento provavelmente envolve um alto risco para o fundamental "
+                                         "direitos e liberdades dos titulares dos dados, um DPIA deve ser preenchido (LGPD Artigo 5, XVII)."))
 
     def get_processing_activities(self):
         return ", ".join([a.name for a in self.processingactivity_set.all()])
-    get_processing_activities.short_description = _("Processing Activities")
+    get_processing_activities.short_description = _("Atividades de processamento")
 
     def get_hints(self):
         hints = super().get_hints()
         if not self.processingactivity_set.count():
-            hints.append(Hint(obj=self, text=_("No processing activity associated to"), hint_type='error'))
+            hints.append(Hint(obj=self, text=_("Nenhuma atividade de processamento associada a"), hint_type='error'))
         if not self.management:
-            hints.append(Hint(obj=self, text=_("No data management policy specified for"), hint_type='issue'))
+            hints.append(Hint(obj=self, text=_("Nenhuma política de gerenciamento de dados especificada para"), hint_type='issue'))
         else:
             hints.extend(self.management.get_hints())
 
@@ -472,17 +472,17 @@ class Data(NameDesc):
             for cat in self.subject_category.all():
                 hints.extend(cat.get_hints())
         else:
-            hints.append(Hint(obj=self, text=_("No subject categories specified for"), hint_type='warning'))
+            hints.append(Hint(obj=self, text=_("Nenhuma categoria de assunto especificada para"), hint_type='warning'))
 
         if self.risk >= 2: # MID/HIGH INHERENT RISK LEVEL
             if not self.breach_detection:
-                hints.append(Hint(obj=self, text=_("Mid/High inherent risk, but no data breach detection technology specified for"), hint_type='issue'))
+                hints.append(Hint(obj=self, text=_("Risco inerente Médio/Alto, mas nenhuma tecnologia de detecção de violação de dados especificada para"), hint_type='issue'))
             if not self.breach_response:
-                hints.append(Hint(obj=self, text=_("Mid/High inherent risk, but no data breach response plan specified for"), hint_type='issue'))
+                hints.append(Hint(obj=self, text=_("Risco inerente Médio/Alto, mas nenhum plano de resposta à violação de dados especificado para"), hint_type='issue'))
             if self.risk >= 3 and (not self.dpia): # INHERENTLY HIGH RISK LEVEL
-                hints.append(Hint(obj=self, text=_("Mid/High inherent risk, but no Data Protection Impact Assessment specified for"), hint_type='issue'))
+                hints.append(Hint(obj=self, text=_("Risco inerente Médio/Alto, mas nenhuma avaliação de impacto de proteção de dados especificada para"), hint_type='issue'))
         elif self.risk == 0:
-            hints.append(Hint(obj=self, text=_("Unknown inherent risk level for"), hint_type='issue'))
+            hints.append(Hint(obj=self, text=_("Nível de risco inerente desconhecido para"), hint_type='issue'))
         if self.breach_detection:
             hints.extend(self.breach_detection.get_hints())
         if self.breach_response:
@@ -492,54 +492,54 @@ class Data(NameDesc):
         return hints
 
     class Meta:
-        verbose_name = _("Data Audit")
-        verbose_name_plural = _("Data Audits")
+        verbose_name = _("Auditoria de Dados")
+        verbose_name_plural = _("Auditoria de Dados")
 
 class ProcessingActivity(NameDesc):
-    data_audit = models.ManyToManyField(Data, blank=True, verbose_name=_("Data Audit"),
-                                        help_text=_("Specify the data handled by this activity (output of a data audit process)."))
+    data_audit = models.ManyToManyField(Data, blank=True, verbose_name=_("Auditoria de Dados"),
+                                        help_text=_("Especifique os dados tratados por esta atividade (saída de um processo de auditoria de dados)."))
     purpose = models.ForeignKey(ProcessingPurpose, on_delete=models.DO_NOTHING,
-                                verbose_name=_("Purpose"))
+                                verbose_name=_("Propósito"))
     proc_type = models.ForeignKey(ProcessingType, on_delete=models.DO_NOTHING,
-                                  verbose_name=_("Processing Type"),)
+                                  verbose_name=_("Tipo de Processamento"),)
     start_date = models.DateField(null=True, blank=True,
-                                  verbose_name=_("Start Date"),)
+                                  verbose_name=_("Data de início"),)
     end_date = models.DateField(null=True, blank=True,
-                                verbose_name=_("End Date"),
-                                help_text=_("Processing end date, if applicable. By filling in this date, you are declaring that processing ceases as of that date."))
+                                verbose_name=_("Data final"),
+                                help_text=_("Data de término do processamento, se aplicável. Ao preencher esta data, você declara que o processamento cessa a partir dessa data."))
     legal = models.ForeignKey(ProcessingLegal, on_delete=models.DO_NOTHING,
-                              verbose_name=_("Legal Base for Processing"),
-                              help_text=_("What is the Legal Base for Processing? It is mandatory!"))
-    technology = models.TextField(blank=True, verbose_name=_("Technology"), help_text=_("How the activity is performed. Description of the technologies, applications, and software employed in the processing activity."), null=True)
+                              verbose_name=_("Base Legal para Processamento"),
+                              help_text=_("Qual é a base legal para o processamento? É obrigatório!"))
+    technology = models.TextField(blank=True, verbose_name=_("Tecnologia"), help_text=_("Como a atividade é realizada. Descrição das tecnologias, aplicativos e software empregados na atividade de processamento."), null=True)
     alternate_activity = models.ForeignKey('self', null=True, blank=True, on_delete=models.DO_NOTHING,
-                                           verbose_name=_("Alternate Activity"),
-                                           help_text=_("Where appropriate, reference the processing activity that replaces the terminated activity. This creates a history in the registry. "
-                                            "This may be of use when the legal basis of a processing activity shifts, for instance as the result of a statutory change."))
-    comments = models.TextField(blank=True, verbose_name=_("Comments"),
-                                help_text=_("Please put any comments to the processing activity."))
+                                           verbose_name=_("Atividade Alternativa"),
+                                           help_text=_("Quando apropriado, faça referência à atividade de processamento que substitui a atividade encerrada. Isso cria um histórico no registro. "
+                                            "Isso pode ser útil quando a base jurídica de uma atividade de processamento muda, por exemplo, como resultado de uma alteração estatutária."))
+    comments = models.TextField(blank=True, verbose_name=_("Comentários"),
+                                help_text=_("Por favor, coloque qualquer comentário na atividade de processamento."))
 
     classification = models.ForeignKey(ProcessingActivityClassificationLevel,  on_delete=models.DO_NOTHING,
-                                       verbose_name=_("Classification Level"),
-                                       help_text=_("Indicate the classification level of the "
-                                                  "processing activity according to the organization's "
-                                                  "classification system (choose the highest in case multiple are "
-                                                  "involved)."),
+                                       verbose_name=_("Nível de Classfíciação"),
+                                       help_text=_("Indique o nível de classificação da "
+                                                  "atividade de processamento de acordo com a empresa"
+                                                  "sistema de classificação (escolha o mais alto caso vários sejam "
+                                                  "envolvidos)."),
                                        null=True,
                                        blank=True)
 
     def get_hints(self):
         hints = super().get_hints()
         if not self.get_business_process():
-            hints.append(Hint(obj=self, text=_("No business process associated to"), hint_type='error'))
+            hints.append(Hint(obj=self, text=_("Nenhum processo de negócios associado a"), hint_type='error'))
         if not self.start_date:
-            hints.append(Hint(obj=self, text=_("Missing start date for"), hint_type='warning'))
+            hints.append(Hint(obj=self, text=_("Data de início ausente para"), hint_type='warning'))
         if not self.technology:
-            hints.append(Hint(obj=self, text=_("Missing description of technology for"), hint_type='warning'))
+            hints.append(Hint(obj=self, text=_("Falta descrição de tecnologia para"), hint_type='warning'))
         if self.data_audit.count():
             for data in self.data_audit.all():
                 hints.extend(data.get_hints())
         else:
-            hints.append(Hint(obj=self, text=_("Please specify at least one data audit for"), hint_type='suggestion'))
+            hints.append(Hint(obj=self, text=_("Especifique pelo menos uma auditoria de dados para"), hint_type='suggestion'))
         return hints
 
     def get_business_process(self):
@@ -553,15 +553,15 @@ class ProcessingActivity(NameDesc):
         try:
             if self.outsourcing.processor == self.get_business_process().get_organization():
                 raise ValidationError(
-                    _("Outsourcing prefigures the assignment of the processing activity to another organization"))
+                    _("A terceirização prefigura a atribuição da atividade de processamento a outra organização"))
         except ValidationError:
             raise
         except:
             pass
 
     class Meta:
-        verbose_name = _("Processing Activity")
-        verbose_name_plural = _("Processing Activities")
+        verbose_name = _("Atividade de processamento")
+        verbose_name_plural = _("Atividades de processamentos")
 
 class BusinessOwner(AuditUser):
 
@@ -571,7 +571,7 @@ class BusinessOwner(AuditUser):
     def get_hints(self):
         hints = super().get_hints()
         if not self.self.businessprocess_set.count():
-            hints.append(Hint(obj=self, text=_("No business process associated with"), hint_type='error'))
+            hints.append(Hint(obj=self, text=_("Nenhum processo de negócios associado a"), hint_type='error'))
         return hints
 
     class Meta:
@@ -581,10 +581,10 @@ class BusinessOwner(AuditUser):
 class BusinessProcess(NameDesc):
     owner = models.ForeignKey(BusinessOwner, null=True, blank=True, on_delete=models.DO_NOTHING,
                               verbose_name=_("Process Owner"),
-                              help_text=_("Please indicate who is responsible for and manages this business process."))
+                              help_text=_("Indique quem é responsável e gerencia este processo de negócios."))
     activities = models.ManyToManyField(ProcessingActivity, blank=True,
-                                        verbose_name=_("Processing Activities"),
-                                        help_text=_("You should insert all processing activities that may handle personal data are part of the business process (e.g., Collection of Curriculum Vitae)"))
+                                        verbose_name=_("Atividades de processamento"),
+                                        help_text=_("Você deve inserir todas as atividades de processamento que podem manipular dados pessoais como parte do processo de negócios (por exemplo, Coleta de Curriculum Vitae"))
 
     def get_organization(self):
         try:
@@ -601,44 +601,44 @@ class BusinessProcess(NameDesc):
         for activity in self.activities.all():
             other_business = activity.businessprocess_set.all().exclude(pk=self.pk).all()
             if other_business.count():
-                raise ValidationError(_("Activity {} is already assigned to another Business Process: {}").format(activity, other_business[0]))
+                raise ValidationError(_("A atividade {} já está atribuída a outro processo empresarial: {}").format(activity, other_business[0]))
 
     def get_hints(self):
         hints = super().get_hints()
         if not self.get_organization():
-            hints.append(Hint(obj=self, text=_("No organization associated to"), hint_type='error'))
+            hints.append(Hint(obj=self, text=_("Nenhuma empresa associada a"), hint_type='error'))
         if not self.owner:
-            hints.append(Hint(obj=self, text=_("No owner for"), hint_type='warning'))
+            hints.append(Hint(obj=self, text=_("Sem dono para"), hint_type='warning'))
         if self.activities.count():
             for activity in self.activities.all():
                 hints.extend(activity.get_hints())
         else:
-            hints.append(Hint(obj=self, text=_("Please specify at least one processing activity for"), hint_type='suggestion'))
+            hints.append(Hint(obj=self, text=_("Especifique pelo menos uma atividade de processamento para"), hint_type='suggestion'))
         return hints
 
     class Meta:
-        verbose_name = _("Business Process")
-        verbose_name_plural = _("Business Processes")
+        verbose_name = _("Processo de negócio")
+        verbose_name_plural = _("Processos de negócio")
 
 
 class YourOrganization(Organization):
     officer = models.ForeignKey(DataProtectionOfficer, null=True, blank=True, on_delete=models.DO_NOTHING,
                                 verbose_name=_("Data Protection Officer (DPO)"),
-                                help_text=_("Please insert the Data Protection Officer (caso exista). A data protection officer (DPO) may be mandatory for "
-                                "public authorities, or if certain types of processing activities are carried out by the organization. The DPO must be independent, an expert in data protection, adequately "
-                                "resourced, and report to the highest management level."))
+                                help_text=_("Por favor, insira o Data Protection Officer (caso exista). Um Data Protection Officers (DPO) pode ser obrigatório para "
+                                "autoridades públicas, ou se determinados tipos de atividades de processamento são realizados pela organização. O DPO deve ser independente, um especialista em proteção de dados, de forma adequada "
+                                "com recursos e reportar ao mais alto nível de gestão e administração."))
     business = models.ManyToManyField(BusinessProcess, blank=True,
-                                      verbose_name=_("Business Processes"),
-                                      help_text=_("You should insert each business process in the Organization that may handle personal data (e.g., Human Resources)"))
-    public_authority = models.BooleanField(verbose_name=_("Public Authority"),
+                                      verbose_name=_("Processo de negócio"),
+                                      help_text=_("Você deve inserir cada processo de negócios na Organização que pode lidar com dados pessoais (por exemplo, Recursos Humanos)"))
+    public_authority = models.BooleanField(verbose_name=_("Autoridade pública"),
                                            help_text=_(
-                                               "Mark this field if the organization is a public authority (except for courts acting in their judicial capacity)"))
-    monitoring = models.BooleanField(verbose_name=_("Large-scale Monitoring"),
+                                               "Marque este campo se a organização for uma autoridade pública (exceto para tribunais que atuam em sua capacidade judicial)"))
+    monitoring = models.BooleanField(verbose_name=_("Monitoramento em larga escala"),
                                      help_text=_(
-                                         "Mark this field if the organization's core activities require large scale, regular and systematic monitoring of individuals (for example, online behaviour tracking)"))
-    special_category = models.BooleanField(verbose_name=_("Special Data"),
+                                         "Marque este campo se as atividades principais da organização exigem monitoramento em larga escala, regular e sistemático de indivíduos (por exemplo, rastreamento de comportamento online)"))
+    special_category = models.BooleanField(verbose_name=_("Dados Especiais"),
                                      help_text=_(
-                                         "Mark this field if the organization's core activities consist of processing on a large scale of special category data, or data relating to criminal convictions and offences"))
+                                         "Marque este campo se as atividades principais da organização consistirem no processamento em grande escala de dados de categorias especiais ou dados relacionados a condenações criminais e crimes"))
 
 
     def __init__(self, *args, **kwargs):
@@ -647,7 +647,7 @@ class YourOrganization(Organization):
 
     def get_business_processes(self):
         return self.business.count()
-    get_business_processes.short_description = _("Business Processes")
+    get_business_processes.short_description = _("Processos de Negócios")
 
     def clean(self):
         """We could avoid such check using ForeignKey on each business instead of a ManyToMany in this obj.
@@ -657,29 +657,29 @@ class YourOrganization(Organization):
         for process in self.business.all():
             other_orgs = process.yourorganization_set.all().exclude(pk=self.pk).all()
             if other_orgs.count():
-                raise ValidationError(_("Business Process {} is already assigned to another Organization: {}").format(process, other_orgs[0]))
+                raise ValidationError(_("Processo de negócios {} já está atribuído a outra organização: {}").format(process, other_orgs[0]))
 
 
     def get_hints(self):
         hints = super().get_hints()
         if (not self.officer) and (self.public_authority or self.monitoring or self.special_category):
             if self.public_authority:
-                text = _("Public authorities ")
+                text = _("Autoridades públicas ")
             elif self.monitoring:
-                text = _("When systematic, large-scale monitoring of individuals is performed as core activity, Organizations ")
+                text = _("Quando o monitoramento sistemático e em grande escala de indivíduos é realizado como atividade principal, as Organizações ")
             elif self.special_category:
-                text = _("When large-scale processing of special data about individuals is performed as core activity, Organizations ")
-            hints.append(Hint(obj=self, text=_("{} must appoint a Data Protection Officer").format(text), hint_type='issue'))
+                text = _("Quando o processamento em grande escala de dados especiais sobre indivíduos é realizado como atividade principal, Organizações ")
+            hints.append(Hint(obj=self, text=_("{} deve nomear um Data Protection Officer").format(text), hint_type='issue'))
         if self.business.count():
             for process in self.business.all():
                 hints.extend(process.get_hints())
         else:
-            hints.append(Hint(obj=self, text=_("Please insert at least one business process into"), hint_type='suggestion'))
+            hints.append(Hint(obj=self, text=_("Insira pelo menos um processo de negócio em"), hint_type='suggestion'))
         return hints
 
 
     class Meta:
-        verbose_name = _("Organization")
-        verbose_name_plural = _("Your Organizations")
+        verbose_name = _("Empresa / Organizações")
+        verbose_name_plural = _("Suas Empresas  / Organizações")
 
 

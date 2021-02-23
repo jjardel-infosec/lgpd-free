@@ -249,7 +249,7 @@ class PDFReport:
         # this function makes our headings
         from hashlib import sha1
         # create bookmarkname
-        bn = sha1(text.encode('utf8') + sty.name.encode('utf8')).hexdigest()
+        bn = sha1(text.encode('iso8859-1') + sty.name.encode('iso8859-1')).hexdigest()
         # modify paragraph text to include an anchor point with name bn
         h = Paragraph('<b>%s <a name="%s"/></b>' % (text, bn), sty)
         # store the bookmark name on the flowable so afterFlowable can see this

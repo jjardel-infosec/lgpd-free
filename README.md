@@ -1,14 +1,16 @@
-# GDPR Registry Web App
-Welcome to the official repository of the GDPR Registry Web App, developed by Pluribus One. This app is part of a comprehensive effort by Pluribus One to help organizations to achieve General Data Protection Regulation (GDPR) compliance. More information can be found on the official website [https://gdpr.pluribus-one.it](https://gdpr.pluribus-one.it/en).
+# LGPD Web App a fork from GDPR Registry Web App
+
+
+Welcome to the repository. This repository is a fork, being translated and configured for use with the pt-be language
 
 ## Goals
-To manage the whole GDPR process, you need a central point where information about GDPR procedures are stored and can be updated on a regular basis by dedicated personnel, including your Data Protection Officer. 
+To manage the whole LGPD process, you need a central point where information about LGPD procedures are stored and can be updated on a regular basis by dedicated personnel, including your Data Protection Officer. 
 
 This central place is of fundamental importance to keep track of your current compliance status, identify issues and mitigate them. And this is exactly the role of the so-called Registry of Data Processing Activities, described in the GDPR Article 30 "Records of processing activities". It can also demonstrate that GDPR is a continuous process that has become an integral part of your business. 
 
 This is a key step towards an enhanced security posture.
 
-The Pluribus One GDPR Registry app allows you to keep track of all data processing activities according to a hierarchical structure and the various GDPR stages highlighted in our [website](https://gdpr.pluribus-one.it/en/data_audit).
+The LGPD Web App application allows you to track all activities of data processing with a hierarchical structure and the various stages for implementation of LGPD highlighted 
 
 **Key Features**
 * **Open Source**: You may freely use and modify it according to our licence.
@@ -30,90 +32,48 @@ That is, Security & Privacy are important for us.
 * Username: gdpr
 * Password: pluribusone
 
-## Installation
-The app can be installed in virtually any modern operating system. It is implemented in [Python](https://www.python.org), using the [Django Framework](https://www.djangoproject.com). The easiest way is to import our preconfigured virtual machine based on Ubuntu 20.04 LTS x64. We also provide manual installation instructions for all tested platforms (currently, Ubuntu 20.04 LTS x64).
-
-### Pre-configured virtual machine
-For your convenience, we have built a preconfigured virtual applicance with the GDPR registry app, based on Ubuntu 20.04.
-
-[Click here to download the OVA file](https://www.dropbox.com/s/eltm1bokwnugvu5/GDPR-Registry-VM.ova?dl=0)
-
->> MD5 (GDPR-Registry-VM.ova) = 24de7c6c222feffb88d0e2dfc94747c6
-
-You can import the OVA file into [VirtualBox](https://www.virtualbox.org) and run the appliance. Then, connect your browser to the IP address assigned to the machine (it uses DHCP by default). You may need to put the related network interface into bridge mode OR NAT mode (in this case, you need to setup a NAT rule).
-
-#### Default Credentials (Operating System)
-* Username: gdpr
-* Password: gdpr
-
-The gdpr user is **sudoer**. 
-
-#### Default Credentials (Login Interface - via Browser)
-* Username: gdpr
-* Password: pluribusone
-
-#### HTTPS Interface
-You should be able to connect to the HTTPS interface @ the IP address assigned to the network interface (e.g., https://10.0.2.15).
 
 #### Production Use
 Please note that the provided virtual appliance is provided "as is" without warranty of any kind. It is not ready for production, especially if you plan to host your appliance with a public IP address. 
 To this end, you may need to:
 
-* setup a static IP
-* harden the server configuration (e.g., with strong HTTPS chiphers, see the **Hardening** section at the end) 
-* install a let's encrypt certificate for your domain (see the Let's Encrypt section)
-* properly setup a firewall to enable only HTTP/HTTPS traffic
-* reset the database/secret key. A new secret key will be automatically generated (randomly).
-
-To reset the database/secret key, from a shell inside **/home/gdpr/** you may run:
-
-    sudo chown -R gdpr:gdpr gdpr-registry-app
-    source python-venv/bin/activate
-    cd gdpr-registry-app
-    rm secret.txt
-    rm db.sqlite3
-    python manage.py migrate
-    python manage.py createsuperuser
-    python manage.py populate
-    cd ..
-    sudo chown -R www-data:gdpr gdpr-registry-app
-    sudo service apache2 restart
     
 When running **python manage.py populate** you may choose to populate the database with predefined lists in
 
 * italian (list.it.json)
 * english (list.en.json)
+* português brasileiro (list.brasil.json)
 
 depending on your target language.
 
-### Manual installation: Ubuntu (tested version: server x64, 20.04 LTS)
-https://ubuntu.com/download/desktop/thank-you?version=20.04.1&architecture=amd64
+### Manual installation: Ubuntu (tested version: server [ Minimal .iso) x64, 20.04 LTS)
+http://archive.ubuntu.com/ubuntu/dists/focal/main/installer-amd64/current/legacy-images/netboot/mini.iso
 
 ### Base Installation
 The base installation can be used for testing purposes, as it runs the interface
-locally @ http://127.0.0.1:8000. Open a shell and insert the following instructions (let's assume we created a **gdpr** user and we open a shell in its home: **/home/gdpr**):
+locally @ http://127.0.0.1:29058. Open a shell and insert the following instructions (let's assume we created a **lgpd** user and we open a shell in its home: **/home/gdpr**):
 
     sudo apt update
     sudo apt install git python3-pip virtualenv
-    git clone https://github.com/pluribus-one/gdpr-registry-app
+    git clone git clone https://github.com/housekore/lgpd-free
     virtualenv -p python3 python-venv
     source python-venv/bin/activate
-    cd gdpr-registry-app
+    cd lgpd-free
     pip install -r requirements.txt
     python manage.py makemigrations axes audit jet dashboard
     python manage.py migrate
     python manage.py createsuperuser
     python manage.py populate
     python manage.py collectstatic
-    python manage.py runserver
+    python manage.py runserver 0.0.0.0:29058 # For access out virtual machine
 
-Now you can go to: `http://127.0.0.1:8000/admin` with your browser. To log in use the (superuser) credentials previously created while executing `python manage.py createsuperuser`.
+Now you can go to: `http://[server-ip]:29058/admin` with your browser. To log in use the (superuser) credentials previously created while executing `python manage.py createsuperuser`.
 
 ### Apache web server
 In order to make your gdpr registry app available to other machines, you may use the Apache web server. Open a shell inside */home/gdpr* and digit:
 
     sudo apt install apache2 libapache2-mod-wsgi-py3
-    sudo chown -R www-data:gdpr gdpr-registry-app
+    sudo chown -R www-data:lgpd lgpd-free
     sudo a2enmod ssl
     sudo a2enmod headers
     sudo a2enmod rewrite
@@ -164,5 +124,5 @@ You can update your installation anytime to the latest version using the followi
     python manage.py populate
     python manage.py collectstatic
 
-## Issues
-Please report all issues in the appropriate [section of this repository](https://github.com/pluribus-one/gdpr-registry-app/issues)
+## Donate
+I am currently unemployed. If you are interested in making a donation via pix, you can use CPF 05966998671. In the name of José Jardel

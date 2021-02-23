@@ -15,9 +15,7 @@ The LGPD Web App application allows you to track all activities of data processi
 **Key Features**
 * **Open Source**: You may freely use and modify it according to our licence.
 * **Sound framework and suggestion mechanisms**: We implemented the Registry App exploiting to our expertise in the field of cybersecurity, and a thorough study of GDPR (which nowadays, it is essentially a cybersecurity problem) to build a comprehensive framework. As you fill in the registry, the app can suggest you how to proceed. We have inserted some useful suggestions that come from our GDPR framework and expertise.
-* **Report Generation**: You can generate, anytime, an updated, high-quality PDF report with all your data registry. This is a very useful feature especially if you organization is under investigation by GDPR supervisory authorities.
-* **Multi-language**: Full translation support thanks to the Django framework. Currently, the interface is available in English and Italian language.
-* **GDPR technology and services**: If you need, Pluribus One offers advanced [technology](https://gdpr.pluribus-one.it/en/technology) and [services](https://gdpr.pluribus-one.it/en/services) around GDPR, to help your organization to achieve GDPR compliance.
+* **Report Generation**: You can generate, anytime, an updated, high-quality PDF report with all your data registry. This is a very useful feature especially if you organization is under investigation by LGPD supervisory authorities.
 
 ## Demo
 You can see a live demo of our application @ [https://registry-app.pluribus-one.it/en](https://registry-app.pluribus-one.it/en). Please note that the demo app has some limitation with respect the original one:

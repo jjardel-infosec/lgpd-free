@@ -347,7 +347,7 @@ class DataManagementPolicy(NameDesc, CommonRiskHint):
     retention = models.IntegerField(null=True, blank=True, verbose_name=_("Período de retenção para os dados processados, em dias"))
     risk_mitigation = models.TextField(blank=True, verbose_name=_("Medidas de mitigação de risco"),
                                         help_text=_("Informações sobre as medidas de mitigação de risco relacionadas ao processamento de dados, contra violações de dados."))
-    risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Risco Residual" choices=RISK_CHOICES,
+    risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Residual Risk"), choices=RISK_CHOICES,
                                             help_text=_("Indique o risco residual para os direitos e liberdades fundamentais dos titulares dos dados, "
                                             "dadas as medidas de mitigação que foram postas em prática."))
     subject_rights = models.ForeignKey(DataSubjectRights, null=True, blank=True, on_delete=models.DO_NOTHING,

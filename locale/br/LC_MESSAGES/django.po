@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: lgpd\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-26 09:58+0000\n"
-"PO-Revision-Date: 2021-02-22 19:37-0300\n"
+"PO-Revision-Date: 2021-02-23 17:27-0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: pt_BR\n"
@@ -195,7 +195,7 @@ msgstr "LGPD Artigo"
 
 #: audit/models.py:152
 msgid "Reference to GDPR Article (if any)"
-msgstr "Referência ao artigo GDPR (se houver)"
+msgstr "Referência ao artigo LGPD  (se houver)"
 
 #: audit/models.py:154
 msgid "Reference URL"
@@ -671,7 +671,7 @@ msgid ""
 msgstr ""
 "Se a atividade de processamento provavelmente envolver um alto risco para os "
 "direitos e liberdades fundamentais dos titulares dos dados, um DPIA deve ser "
-"preenchido (Artigo 35 do RGPD)."
+"preenchido (Artigo 35 do LGPD)."
 
 #: audit/models.py:465
 msgid "No processing activity associated to"
@@ -995,7 +995,7 @@ msgstr "Gerado por"
 
 #: audit/pdf_report.py:188
 msgid "GDPR Registry of Processing Activities"
-msgstr "Registro GDPR de atividades de processamento"
+msgstr "Registro LGPD para atividade de tratamento de dados"
 
 #: audit/pdf_report.py:278
 #, python-format
@@ -1331,7 +1331,7 @@ msgid ""
 "                    and provide for rapid counteractions to <code>mitigate</"
 "code> their impact."
 msgstr ""
-"GDPR compliance means that your organization should be prepared to deal with "
+"LGPD compliance means that your organization should be prepared to deal with "
 "data breaches,\n"
 "                    and provide for rapid counteractions to <code>mitigate</"
 "code> their impact."
@@ -1348,7 +1348,7 @@ msgstr ""
 "Data breaches must be notified to supervisory authorities within <code>72 "
 "hours</code>, or even less,\n"
 "                    if data breaches affect the freedom of natural "
-"individuals (GDPR Article 33). In addition, every affected person must be "
+"individuals (LGPD Article 33). In addition, every affected person must be "
 "notified with\n"
 "                    the details about the incident."
 

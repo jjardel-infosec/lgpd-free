@@ -201,7 +201,7 @@
         "url": ""
       }
     ],
-    "Cultura e Bem Estar" [
+    "Cultura e Bem Estar": [
       {
         "name": "Gestao da Biblioteca",
         "description": "Cadastrar membros de uma biblioteca em um banco de dados, rastreando seus emprestimos.",
@@ -446,7 +446,7 @@
       }
     ]
   },
-  "Lista Indicativa de Categorias de Dados Funcionais": {
+  "Indicative List of Functional Data Categories": {
     "Dados de identificacao": [
       {
         "name": "PII",
@@ -1161,7 +1161,7 @@
       }
     ]
   },
-  "Tipo de Processamento": {
+  "Type of Processing": {
     "Generico": [
       {
         "name": "Normal",
@@ -1289,7 +1289,7 @@
       }
     ]
   },
-  "Natureza da transferencia para pais terceiro / organizacao internacional": {
+  "Nature of Transfer to Third Country/International Organization": {
     "Generico": [
       {
         "name": "Transferencias com base em uma decisao de adequacao",
@@ -1323,7 +1323,7 @@
       }
     ]
   },
-  "Lista indicativa de categorias de titulares de dados": {
+  "Indicative List of Data Subject Categories": {
     "Generico": [
       {
         "name": "Pacientes",

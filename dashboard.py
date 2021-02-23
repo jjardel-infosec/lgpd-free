@@ -63,18 +63,18 @@ class IndexDashboard(Dashboard):
             _('Support'),
             children=[
                 {
-                    'title': _('HOW TO WORK'),
+                    'title': _('Como funciona'),
                     'url': reverse('data_audit'),
                     'external': True,
                 },
                 {
-                    'title': _('Pluribus One Technology'),
-                    'url': 'https://gdpr.pluribus-one.it/{}/technology'.format(context.get('request').LANGUAGE_CODE),
+                    'title': _('LGPD Web App'),
+                    'url': 'https://site.it/{}/technology'.format(context.get('request').LANGUAGE_CODE),
                     'external': True,
                 },
                 {
-                    'title': _('Pluribus One Services'),
-                    'url': 'https://gdpr.pluribus-one.it/{}/services'.format(context.get('request').LANGUAGE_CODE),
+                    'title': _('LGPD Web App'),
+                    'url': 'https://site.it/{}/services'.format(context.get('request').LANGUAGE_CODE),
                     'external': True,
                 },
             ],

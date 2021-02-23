@@ -19,7 +19,7 @@ from django.utils.html import format_html
 from django.urls import reverse
 from audit import models
 
-admin.site.site_header = _('GDPR Registry App')
+admin.site.site_header = _('LGPD Web App')
 admin.site.site_title = admin.site.site_header
 admin.index_title = admin.site.site_header
 

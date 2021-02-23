@@ -111,9 +111,9 @@ class MyDocTemplate(BaseDocTemplate):
         self.org = org
         template = PageTemplate('normal', frames=[Frame(self.leftMargin, self.bottomMargin, self.width, self.height, id='F1')], onPage=self.laterPages)
         self.addPageTemplates(template)
-        self.PAGE_FOOTER_LEFT = _("GDPR Registry of Data Processing Activities for %s")
-        self.PAGE_FOOTER_RIGHT = _("Page %d")
-        self.GENERATED_ON = _("Report generated on {date}")
+        self.PAGE_FOOTER_LEFT = _("LGPD Web App %s")
+        self.PAGE_FOOTER_RIGHT = _("Pagina %d")
+        self.GENERATED_ON = _("Relatorio gerado em {date}")
         self.POWERED_BY = _("Powered by")
 
     # Entries to the table of contents can be done either manually by
@@ -160,7 +160,7 @@ class MyDocTemplate(BaseDocTemplate):
         scale(drawing, scaling_factor=0.3)
         renderPDF.draw(drawing, canvas, self.w/2 - (drawing.width / 2), self.h/2)
         canvas.setFont('Helvetica', 8)
-        canvas.drawString(self.margin, self.margin, "First Page / Pluribus One")
+        canvas.drawString(self.margin, self.margin, "Primeira Pagina / LGPD Web App")
         canvas.restoreState()
 
     def laterPages(self, canvas, doc):
@@ -175,7 +175,7 @@ class MyDocTemplate(BaseDocTemplate):
         canvas.drawString(self.margin, self.margin-3 * self.sep, self.PAGE_FOOTER_LEFT % self.org.name)
         canvas.drawRightString(self.w-self.margin, self.margin-3*self.sep, self.PAGE_FOOTER_RIGHT % doc.page)
         canvas.drawString(self.w-self.margin-logo_width-1.6*cm, self.h-self.margin+3*self.sep, self.POWERED_BY)
-        canvas.drawImage(os.path.join(BASE_DIR, 'audit/static/img/pluribus-one.png'), x=self.w-logo_width-self.margin, y=self.h-self.margin, height=logo_height, width=logo_width)
+        canvas.drawImage(os.path.join(BASE_DIR, 'audit/static/img/lgpd-free.png'), x=self.w-logo_width-self.margin, y=self.h-self.margin, height=logo_height, width=logo_width)
         canvas.restoreState()
 
 
@@ -183,7 +183,7 @@ class PDFReport:
     """Report document in PDF"""
 
     def __init__(self, org, margin=3*cm, sep=0.2*cm):
-        self.title = _("GDPR Registry of Processing Activities")
+        self.title = _("LGPD - Registro de atividades de processamento")
         self.org = org
         self.margin = margin
         self.pdf = None
@@ -273,7 +273,7 @@ class PDFReport:
         self.elements.append(PageBreak())
 
     def set_org(self):
-        self.doHeading(_("Organization: %s") % self.org.name, 1)
+        self.doHeading(_("Organizacao: %s") % self.org.name, 1)
         table = Table(get_data(self.org, exclude_fields={'business', 'officer'}))
         self.elements.append(table)
 
@@ -289,13 +289,13 @@ class PDFReport:
                                                                         'date_joined'}))
             self.elements.append(Table(data))
         else:
-            self.elements.append(Paragraph(_("DPO has not been set."), self.style['Normal']))
+            self.elements.append(Paragraph(_("DPO nao foi definido."), self.style['Normal']))
 
     def set_business(self):
-        self.doHeading(_("Business Processes (%d)") % self.org.business.count(), 1)
+        self.doHeading(_("Processos de Negocios (%d)") % self.org.business.count(), 1)
         if self.org.business:
             for process in self.org.business.all():
-                self.doHeading(_("Process: %s (activities: %d)") % (process.name, process.activities.count()), 2)
+                self.doHeading(_("Processos: %s (activities: %d)") % (process.name, process.activities.count()), 2)
                 self.elements.append(Table(get_data(process, exclude_fields={'activities', 'name'})))
                 for activity in process.activities.all():
                     self.doHeading(_("%s > %s (data audits: %d)") % (process.name, activity.name, activity.data_audit.count()), 3)
@@ -305,46 +305,46 @@ class PDFReport:
                         self.elements.append(Table(get_data(data, exclude_fields={'name', 'subject_category',
                                                                                   'management', 'breach_detection',
                                                                                   'breach_response', 'dpia'})))
-                        self.doHeading(_("%s > %s > %s > Data Subject Categories") % (process.name, activity.name, data.name), 5)
+                        self.doHeading(_("%s > %s > %s > Categorias e sub categorias dos dados") % (process.name, activity.name, data.name), 5)
                         for cat in data.subject_category.all():
                             self.elements.append(Table(get_data(cat, exclude_fields={})))
                         if not data.subject_category.count():
-                            self.elements.append(Paragraph(_("<em>There are no data subject categories for the data (!)</em>"), self.style['Normal']))
+                            self.elements.append(Paragraph(_("<em>Nao existem categorias de titulares de dados para os dados (!)</em>"), self.style['Normal']))
 
-                        self.doHeading(_("%s > %s > %s > Data Management Policy") % (process.name, activity.name, data.name), 5)
+                        self.doHeading(_("%s > %s > %s > Politica de Gestão de Dados") % (process.name, activity.name, data.name), 5)
                         if data.management:
                             self.elements.append(Table(get_data(data.management, exclude_fields={'data_transfer', 'processor_contracts'})))
-                            self.doHeading(_("%s > %s > %s > Data Transfers (to third parties)") % (process.name, activity.name, data.name), 5)
+                            self.doHeading(_("%s > %s > %s > Transferencias de dados (para terceiros)") % (process.name, activity.name, data.name), 5)
                             for contract in data.management.processor_contracts.all():
                                 self.elements.append(Table(get_data(contract, exclude_fields={'processor', 'pdfdocument_ptr'})))
                                 self.elements.append(Table(get_data(contract.processor, exclude_fields={})))
                             if not data.management.processor_contracts.count():
-                                self.elements.append(Paragraph(_("<em>Sounds Good. No data transfers.</em>"), self.style['Normal']))
+                                self.elements.append(Paragraph(_("<em>Soa bem. Sem transferencia de dados.</em>"), self.style['Normal']))
                         else:
-                            self.elements.append(Paragraph(_("<em>No Management Policy for the data (!)</em>"), self.style['Normal']))
+                            self.elements.append(Paragraph(_("<em>Nenhuma politica de gestao para os dados (!)</em>"), self.style['Normal']))
 
-                        self.doHeading(_("%s > %s > %s > Data Breach Detection") % (process.name, activity.name, data.name), 5)
+                        self.doHeading(_("%s > %s > %s > Deteccao de violacao de dados") % (process.name, activity.name, data.name), 5)
                         if data.breach_detection:
                             self.elements.append(Table(get_data(data.breach_detection, exclude_fields={})))
                         else:
-                            self.elements.append(Paragraph(_("<em>No Data Breach Detection method found (!)</em>"), self.style['Normal']))
+                            self.elements.append(Paragraph(_("<em>Nenhum metodo de deteccao de violacao de dados encontrado (!)</em>"), self.style['Normal']))
 
-                        self.doHeading(_("%s > %s > %s > Data Breach Response") % (process.name, activity.name, data.name), 5)
+                        self.doHeading(_("%s > %s > %s > Resposta a violacao de dados") % (process.name, activity.name, data.name), 5)
                         if data.breach_response:
                             self.elements.append(Table(get_data(data.breach_response, exclude_fields={})))
                         else:
                             self.elements.append(
-                                Paragraph(_("<em>No Data Breach Response plan found (!)</em>"), self.style['Normal']))
+                                Paragraph(_("<em>Nenhum plano de resposta a violacao de dados encontrado (!)</em>"), self.style['Normal']))
 
-                        self.doHeading(_("%s > %s > %s > Data Protection Impact Assessment") % (process.name, activity.name, data.name), 5)
+                        self.doHeading(_("%s > %s > %s > Avaliacao do impacto da proteca o de dados DPIA") % (process.name, activity.name, data.name), 5)
                         if data.dpia:
                             self.elements.append(Table(get_data(data.dpia, exclude_fields={'pdfdocument_ptr'})))
                         else:
                             self.elements.append(
-                                Paragraph(_("<em>No Data Protection Impact Assessment found (!)</em>"), self.style['Normal']))
+                                Paragraph(_("<em>DPIA nao encontrado (!)</em>"), self.style['Normal']))
 
         else:
-            self.elements.append(Paragraph(_("<em>None available.</em>"), self.style['Normal']))
+            self.elements.append(Paragraph(_("<em>Nao disponível.</em>"), self.style['Normal']))
 
     def set_data(self):
         for elm in models.DataCategory.objects.all():

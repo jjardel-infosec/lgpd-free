@@ -1,20 +1,20 @@
-{
+ï»¿{
   "Indicative List of Purpose Types": {
     "Fins Gerais": [
       {
         "name": "HR",
-        "description": "Recrutamento e selecao de funcionarios e intermediarios (corretores, representantes independentes, etc.). Administracao da folha de pagamento, remuneracoes, comissoes e salarios. Aplicacao da legislacao social.",
+        "description": "Recrutamento e seleção de funcionários e intermediários (corretores, representantes independentes, etc.). Administração da folha de pagamento, remunerações, comissões e salários. Aplicação da legislação social.",
         "article": null,
         "url": ""
       },
       {
         "article": null,
-        "description": "Avaliacao e gestao de colaboradores e intermediarios. Planejamento de formacao e carreira.",
-        "name": "Gestao de Pessoal",
+        "description": "Avaliação e gestão de colaboradores e intermediários. Planejamento de formação e carreira.",
+        "name": "Gestão de Pessoal",
         "url": ""
       },
       {
-        "name": "Gestao de Tarefas",
+        "name": "Gestão de Tarefas",
         "description": "Planejamento e gerenciamento de tarefas, cargas de trabalho e desempenho.",
         "article": null,
         "url": ""
@@ -26,38 +26,38 @@
         "url": ""
       },
       {
-        "name": "Gestao de Clientes",
-        "description": "Administracao de clientes, gestao de encomendas, entregas, faturacao de servicos materiais e imateriais. Monitorizacao de solvencia. Marketing e publicidade personalizados. Cadastrar clientes de uma empresa e traca-los com base nas compras.",
+        "name": "Gestão de Clientes",
+        "description": "Administração de clientes, gestão de encomendas, entregas, faturação de serviços materiais e imateriais. Monitorização de solvência. Marketing e publicidade personalizados. Cadastrar clientes de uma empresa e traçá-los com base nas compras.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Combate a fraude e violacoes de clientes",
+        "name": "Combate a fraude e violações de clientes",
         "description": "Pretende-se atividades para prevenir e detectar tais atos.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Gestao de reclamacoes",
-        "description": "Gestao de reclamacoes, incluindo reembolso de valores devidos.",
+        "name": "Gestão de reclamações",
+        "description": "Gestão de reclamações, incluindo reembolso de valores devidos.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Gestao de Fornecedores",
-        "description": "Administracao de fornecedores. Gerenciamento de pedidos recebidos e pagamento de fornecedores. Prospeccao de possiveis fornecedores e sua avaliacao.",
+        "name": "Gestão de Fornecedores",
+        "description": "Administração de fornecedores. Gerenciamento de pedidos recebidos e pagamento de fornecedores. Prospecção de possíveis fornecedores e sua avaliação.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Coleta de doacao",
-        "description": "Administracao de doadores para um clube. Prospeccao de novos doadores.",
+        "name": "Coleta de doação",
+        "description": "Administração de doadores para um clube. Prospecção de novos doadores.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Relacoes Publicas",
-        "description": "Isso inclui criar boa vontade para a organizacao.",
+        "name": "Relações Públicas",
+        "description": "Isso inclui criar boa vontade para a organização.",
         "article": null,
         "url": ""
       },
@@ -68,31 +68,31 @@
         "url": ""
       },
       {
-        "name": "Cadastro e administracao de acionistas ou socios",
-        "description": "Manter um registro de acionistas ou socios. A administracao de seus beneficios financeiros e outros.",
+        "name": "Cadastro e administração de acionistas ou sócios",
+        "description": "Manter um registro de acionistas ou sócios. A administração de seus benefícios financeiros e outros.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Gestao de Membros",
-        "description": "A administracao dos socios, voluntarios e simpatizantes de um clube.",
+        "name": "Gestão de Membros",
+        "description": "A administração dos sócios, voluntários e simpatizantes de um clube.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Seguranca",
+        "name": "Segurança",
         "description": "Data processing to ensure the safety of people or goods. Note: In principle, security cameras are subject to the law of March 21, 2007 regarding the placement and use of security cameras (the \u2018Camera Law\u2019) and may not be reported by means of this form. Please use the customized thematic form. More information in this regard can be found at www.privacycommission.be (Cam\u00e9ras de surveillance et notre vie priv\u00e9e / Bewakingscamera\u2019s en onze privacy).",
         "article": null,
         "url": ""
       },
       {
-        "name": "Gestao de disputas",
-        "description": "A gestao por pessoas fisicas, organismos privados ou autoridades publicas dos seus proprios litigios.",
+        "name": "Gestão de disputas",
+        "description": "A gestão por pessoas físicas, organismos privados ou autoridades públicas dos seus próprios litígios.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Protecao da sociedade, da industria ou da organizacao",
+        "name": "Proteção da sociedade, da indústria ou da organização",
         "description": "Tratamento de dados relativos a pessoas que representam um certo risco, como hooligans.",
         "article": null,
         "url": ""
@@ -101,19 +101,19 @@
     "Fins Governamentais": [
       {
         "name": "Taxas",
-        "description": "Cobranca de impostos e atividades a ela relacionadas: registro de contribuintes e tambem calculo, cobranca e rastreamento de impostos.",
+        "description": "Cobrança de impostos e atividades a ela relacionadas: registro de contribuintes e também cálculo, cobrança e rastreamento de impostos.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Subsidios",
-        "description": "Concessao de subsidios e atividades relacionadas: pesquisa de beneficiarios elegiveis, bem como calculo, pagamento e rastreamento de subsidios.",
+        "name": "Subsídios",
+        "description": "Concessão de subsídios e atividades relacionadas: pesquisa de beneficiários elegíveis, bem como cálculo, pagamento e rastreamento de subsídios.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Permissoes",
-        "description": "Concessao de licencas e atividades relacionadas: pesquisa de destinatarios elegiveis e acompanhamento dos requisitos.",
+        "name": "Permissões",
+        "description": "Concessão de licenças e atividades relacionadas: pesquisa de destinatários elegíveis e acompanhamento dos requisitos.",
         "article": null,
         "url": ""
       },
@@ -124,171 +124,171 @@
         "url": ""
       },
       {
-        "name": "Eleicoes",
-        "description": "Manter listas de eleitores e organizar eleicoes.",
+        "name": "Eleições",
+        "description": "Manter listas de eleitores e organizar eleições.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Administracao de imigracao",
-        "description": "Manter um registro de imigrante e rastrear autorizacoes de residencia.",
+        "name": "Administração de imigração",
+        "description": "Manter um registro de imigrante e rastrear autorizações de residência.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Cadastro de propriedade de terras",
-        "description": "Criaçao e atualizacao de cadastro de propriedades, cobranca de impostos sobre propriedades e fornecimento de certificados fiscais.",
+        "name": "Land registry",
+        "description": "Creating and updating a registry of properties, levying property taxes and providing tax certificates.",
         "article": null,
         "url": ""
       },
       {
         "name": "Registros do governo",
         "description": null,
-        "descricao": "Gestao da correspondencia entre o servico publico e as pessoas que se comunicaram voluntariamente com o servico. Gestao de dados de pessoas com quem o servico publico nao mantem uma relacao lucrativa.",
+        "descrição": "Gestão da correspondência entre o serviço público e as pessoas que se comunicaram voluntariamente com o serviço. Gestão de dados de pessoas com quem o serviço público não mantém uma relação lucrativa.",
         "article": null,
         "url": ""
       }
     ],
     "Justice and Law Enforcement": [
       {
-        "name": "Seguranca Publica",
-        "description": "Coletar e rastrear informacoes sobre pessoas consideradas um risco para a seguranca publica.",
+        "name": "Segurança Pública",
+        "description": "Coletar e rastrear informações sobre pessoas consideradas um risco para a segurança pública.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Execucao Criminal",
+        "name": "Execução Criminal",
         "description": "Detectar e rastrear pessoas suspeitas de crimes.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Aplicacao regulatoria",
-        "description": "Prevenir violacoes e supervisionar o cumprimento de leis e regulamentos.",
+        "name": "Aplicação regulatória",
+        "description": "Prevenir violações e supervisionar o cumprimento de leis e regulamentos.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Administracao judicial",
+        "name": "Administração judicial",
         "description": "Manter processos e registros.",
         "article": null,
         "url": ""
       },
       {
         "name": "Registros Criminais",
-        "description": "Registro de condenacoes criminais.",
+        "description": "Registro de condenações criminais.",
         "article": null,
         "url": ""
       },
       {
         "name": "Defendendo clientes",
-        "description": "Gestao de processos e interesses criminais por advogados ou outros consultores juridicos no interesse dos seus clientes.",
+        "description": "Gestão de processos e interesses criminais por advogados ou outros consultores jurídicos no interesse dos seus clientes.",
         "article": null,
         "url": ""
       }
     ],
-    "Educacao": [
+    "Educação": [
       {
-        "name": "Administracao de alunos",
-        "description": "Criar uma base de dados de alunos, organizar o curriculo e os exames, registar resultados e decisoes. Calculo, facturacao e cobranca de dividas. Relacoes com ex-alunos.",
+        "name": "Administração de alunos",
+        "description": "Criar uma base de dados de alunos, organizar o currículo e os exames, registar resultados e decisões. Cálculo, facturação e cobrança de dívidas. Relações com ex-alunos.",
         "article": null,
         "url": ""
       },
       {
         "name": "Aconselhamento de alunos",
-        "description": "Fornecer aconselhamento de orientacao aos alunos sobre seu desenvolvimento intelectual, seus problemas psicologicos e selecao de planos de carreira.",
+        "description": "Fornecer aconselhamento de orientação aos alunos sobre seu desenvolvimento intelectual, seus problemas psicológicos e seleção de planos de carreira.",
         "article": null,
         "url": ""
       }
     ],
     "Cultura e Bem Estar" [
       {
-        "name": "Gestao da Biblioteca",
-        "description": "Cadastrar membros de uma biblioteca em um banco de dados, rastreando seus emprestimos.",
+        "name": "Gestão da Biblioteca",
+        "description": "Cadastrar membros de uma biblioteca em um banco de dados, rastreando seus empréstimos.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Aconselhamento publico",
-        "description": "Fornecer material e / ou aconselhamento psicologico a pessoas necessitadas.",
+        "name": "Aconselhamento público",
+        "description": "Fornecer material e / ou aconselhamento psicológico a pessoas necessitadas.",
         "article": null,
         "url": ""
       },
       {
         "name": "Aconselhamento de emprego",
-        "description": "Aconselhamento de desempregados e sua formacao para um novo emprego.",
+        "description": "Aconselhamento de desempregados e sua formação para um novo emprego.",
         "article": null,
         "url": ""
       }
     ],
-    "Beneficios do governo": [
+    "Benefícios do governo": [
       {
-        "name": "Administracao de destinatarios elegiveis",
-        "description": "Recolher contribuicoes, determinar e conceder beneficios do governo, incluindo assistencia social.",
+        "name": "Administração de destinatários elegíveis",
+        "description": "Recolher contribuições, determinar e conceder benefícios do governo, incluindo assistência social.",
         "article": null,
         "url": ""
       }
     ],
-    "Saude e Cuidados": [
+    "Saúde e Cuidados": [
       {
         "name": "Cuidados com o paciente",
-        "description": "assistencia prestada e a ser prestada com o objetivo de melhorar a qualidade da assistencia prestada aos pacientes.",
+        "description": "assistência prestada e a ser prestada com o objetivo de melhorar a qualidade da assistência prestada aos pacientes.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Codificacao medica",
+        "name": "Codificação médica",
         "description": "Acompanhamento de atendimento e tratamento hospitalar para fins de faturamento.",
         "article": null,
         "url": ""
       },
       {
         "name": "Registros de pacientes",
-        "description": "Registro de informacoes medicas e hospitalares para fins de gerenciamento.",
+        "description": "Registro de informações médicas e hospitalares para fins de gerenciamento.",
         "article": null,
         "url": ""
       },
       {
         "name": "Registrando grupos de risco",
-        "description": "Identificar e monitorar pessoas com riscos medicos elevados.",
+        "description": "Identificar e monitorar pessoas com riscos médicos elevados.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Registro de doadores de orgaos",
-        "description": "Criacao de bancos de dados de pessoas que desejam ser doadores de orgaos, bem como a promocao e uso de tal banco de dados.",
+        "name": "Registro de doadores de órgãos",
+        "description": "Criação de bancos de dados de pessoas que desejam ser doadores de órgãos, bem como a promoção e uso de tal banco de dados.",
         "article": null,
         "url": ""
       },
       {
         "name": "Gerenciamento de estoque de medicamentos",
-        "description": "Processamento de dados relacionados com a prescricao e entrega de medicamentos.",
+        "description": "Processamento de dados relacionados com a prescrição e entrega de medicamentos.",
         "article": null,
         "url": ""
       }
     ],
-    "Pesquisa cientifica primaria ou secundaria cujo objetivo e consistente com o objetivo da colecao original": [
+    "Pesquisa científica primária ou secundária cujo objetivo é consistente com o objetivo da coleção original": [
       {
-        "name": "Pesquisa epidemiologica",
-        "description": "Pesquisa sobre a disseminacao do risco medico, morbidade e mortalidade.",
+        "name": "Pesquisa epidemiológica",
+        "description": "Pesquisa sobre a disseminação do risco médico, morbidade e mortalidade.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Pesquisa biomedica",
-        "description": "Pesquisa sobre as causas da patologia medica e o efeito dos tratamentos medicos. Ensaios clinicos.",
+        "name": "Pesquisa biomédica",
+        "description": "Pesquisa sobre as causas da patologia médica e o efeito dos tratamentos médicos. Ensaios clínicos.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Avaliacao do atendimento ao paciente",
-        "description": "Coleta e processamento de todos os dados relativos aos diagnosticos medicos e paramedicos, bem como as praticas terapeuticas prestadas aos pacientes com o objetivo de melhorar a qualidade das praticas de atendimento.",
+        "name": "Avaliação do atendimento ao paciente",
+        "description": "Coleta e processamento de todos os dados relativos aos diagnósticos médicos e paramédicos, bem como às práticas terapêuticas prestadas aos pacientes com o objetivo de melhorar a qualidade das práticas de atendimento.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Pesquisa cientifica",
-        "description": "Qualquer ato destinado a determinar conexoes paradigmaticas, comportamentais e causais que sejam maiores do que os individuos aos quais estao relacionadas. Destina-se a descrever fenomenos globais.",
+        "name": "Pesquisa científica",
+        "description": "Qualquer ato destinado a determinar conexões paradigmáticas, comportamentais e causais que sejam maiores do que os indivíduos aos quais estão relacionadas. Destina-se a descrever fenômenos globais.",
         "article": null,
         "url": ""
       },
@@ -300,93 +300,93 @@
       },
       {
         "name": "Pesquisa de mercado",
-        "description": "Tratamento de dados pessoais de arquivos privados ou publicos com o objetivo de analisar um evento historico ou possibilitar essa analise.",
+        "description": "Tratamento de dados pessoais de arquivos privados ou públicos com o objetivo de analisar um evento histórico ou possibilitar essa análise.",
         "article": null,
         "url": ""
       },
       {
         "name": "Genealogia",
-        "description": "Tratamento de dados pessoais para fins de construcao de arvore genealogica ou genealogica, registo familiar ou lista familiar, etc.",
+        "description": "Tratamento de dados pessoais para fins de construção de árvore genealógica ou genealógica, registo familiar ou lista familiar, etc.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Pesquisa estatistica",
-        "description": "Qualquer ato destinado a coletar e processar dados pessoais necessarios para questionarios estatisticos ou para a entrega de um resultado estatistico (por exemplo, anuncio geral, ajuda no planejamento e tomada de decisao e a servico da ciencia). ",
+        "name": "Pesquisa estatística",
+        "description": "Qualquer ato destinado a coletar e processar dados pessoais necessários para questionários estatísticos ou para a entrega de um resultado estatístico (por exemplo, anúncio geral, ajuda no planejamento e tomada de decisão e a serviço da ciência). ",
         "article": null,
         "url": ""
       }
     ],
-    "Servicos bancarios e financeiros, seguros": [
+    "Serviços bancários e financeiros, seguros": [
       {
         "name": "Gerenciamento de contas",
-        "description": "A gestao de contas individuais de debito e poupanca, com saldo credor ou nao, pertencentes a clientes da instituicao financeira. Estas atividades incluem as operacoes de pagamento relacionadas com a conta.",
+        "description": "A gestão de contas individuais de débito e poupança, com saldo credor ou não, pertencentes a clientes da instituição financeira. Estas atividades incluem as operações de pagamento relacionadas com a conta.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Gestao de patrimonio",
-        "description": "Refere-se a totalidade das acoes realizadas por um banco, de forma discricionaria ou nao, no aconselhamento ao cliente na gestao do seu patrimonio.",
+        "name": "Gestão de patrimônio",
+        "description": "Refere-se à totalidade das ações realizadas por um banco, de forma discricionária ou não, no aconselhamento ao cliente na gestão do seu patrimônio.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Financas corporativas",
-        "description": "Prestacao de servicos relacionados a distribuicao de capital, venda de acoes, incorporacoes e incorporacoes.",
+        "name": "Finanças corporativas",
+        "description": "Prestação de serviços relacionados à distribuição de capital, venda de ações, incorporações e incorporações.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Emprestimo",
-        "description": "Refere-se a totalidade das acoes relacionadas com a estimativa dos riscos incorridos por um banco na concessao de credito, independentemente da natureza do credito.",
+        "name": "Empréstimo",
+        "description": "Refere-se à totalidade das ações relacionadas com a estimativa dos riscos incorridos por um banco na concessão de crédito, independentemente da natureza do crédito.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Administracao de credito",
-        "description": "Refere-se as acoes relacionadas ao monitoramento e reembolso de saldos credores, incluindo sinistros, e as acoes relacionadas a esses sinistros, independentemente do envolvimento de terceiros.",
+        "name": "Administração de crédito",
+        "description": "Refere-se às ações relacionadas ao monitoramento e reembolso de saldos credores, incluindo sinistros, e as ações relacionadas a esses sinistros, independentemente do envolvimento de terceiros.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Visao geral do cliente global",
-        "description": "A integracao da totalidade ou de parte dos dados processados no contexto de uma das finalidades especificas do setor bancario. Com a finalidade de se chegar a uma conclusao sobre a rentabilidade geral dos clientes e se devem ser oferecidos produtos ou servicos bancarios customizados as suas necessidades e que auxiliem a instituicao bancaria, de uma forma geral, a tomar as decisoes necessarias em relacao aos seus clientes. ",
+        "name": "Visão geral do cliente global",
+        "description": "A integração da totalidade ou de parte dos dados processados no contexto de uma das finalidades específicas do setor bancário. Com a finalidade de se chegar a uma conclusão sobre a rentabilidade geral dos clientes e se devem ser oferecidos produtos ou serviços bancários customizados às suas necessidades e que auxiliem a instituição bancária, de uma forma geral, a tomar as decisões necessárias em relação aos seus clientes. ",
         "article": null,
         "url": ""
       },
       {
-        "name": "Servicos de corretagem",
-        "description": "A mediacao entre clientes e instituicoes financeiras especializadas em seguros, credito, produtos de bolsa, etc.",
+        "name": "Serviços de corretagem",
+        "description": "A mediação entre clientes e instituições financeiras especializadas em seguros, crédito, produtos de bolsa, etc.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Gestao de seguros pessoais",
-        "description": "Seguro de pessoas contra incertezas que prejudicam a integridade fisica ou a situacao familiar das pessoas. Analise de risco, gestao de apolices, premios e indenizacoes. Resseguro e gestao de disputas.",
+        "name": "Gestão de seguros pessoais",
+        "description": "Seguro de pessoas contra incertezas que prejudicam a integridade física ou a situação familiar das pessoas. Análise de risco, gestão de apólices, prêmios e indenizações. Resseguro e gestão de disputas.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Gestao de seguros de grupo",
+        "name": "Gestão de seguros de grupo",
         "description": "A variante em grupo do seguro pessoal.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Gestao de seguros contra incendio, acidentes e perigos diversos",
-        "description": "Seguro de clientes contra danos a bens e bens ou contra sua responsabilidade por danos causados a terceiros. Analise de riscos, gestao de apolices, premios e indenizacoes. Resseguro e gestao de disputas.",
+        "name": "Gestão de seguros contra incêndio, acidentes e perigos diversos",
+        "description": "Seguro de clientes contra danos a bens e bens ou contra sua responsabilidade por danos causados a terceiros. Análise de riscos, gestão de apólices, prêmios e indenizações. Resseguro e gestão de disputas.",
         "article": null,
         "url": ""
       },
       {
         "name": "Seguro de acidentes industriais",
-        "description": "Seguro de empregadores contra danos sofridos por funcionarios durante acidentes de trabalho. Analise de riscos, gestao de apolices, premios e indenizacoes. Resseguro e gestao de disputas. Pesquisa preventiva",
+        "description": "Seguro de empregadores contra danos sofridos por funcionários durante acidentes de trabalho. Análise de riscos, gestão de apólices, prêmios e indenizações. Resseguro e gestão de disputas. Pesquisa preventiva",
         "article": null,
         "url": ""
       },
       {
-        "name": "Gestao de riscos elevados",
-        "description": "Processamento de dados em varios ramos de seguros sobre pessoas com risco elevado, com o objetivo de evitar riscos inaceitaveis e fraudes.",
+        "name": "Gestão de riscos elevados",
+        "description": "Processamento de dados em vários ramos de seguros sobre pessoas com risco elevado, com o objetivo de evitar riscos inaceitáveis e fraudes.",
         "article": null,
         "url": ""
       }
@@ -394,91 +394,91 @@
     "Trade": [
       {
         "name": "Marketing direto",
-        "description": "Prospeccao, atividades e servicos oferecidos a segmentos populacionais por sociedades comerciais, instituicoes de caridade ou outros clubes ou fundacoes, inclusive de natureza politica. Os meios de comunicacao para essas acoes podem ser correio, telefone ou outros meios diretos (por exemplo, e-mail). Nao importa se o destinatario ja e um cliente ou nao.",
+        "description": "Prospecção, atividades e serviços oferecidos a segmentos populacionais por sociedades comerciais, instituições de caridade ou outros clubes ou fundações, inclusive de natureza política. Os meios de comunicação para essas ações podem ser correio, telefone ou outros meios diretos (por exemplo, e-mail). Não importa se o destinatário já é um cliente ou não.",
         "article": null,
         "url": ""
       },
       {
-        "name": "Comercio de inteligencia comercial",
-        "description": "Venda apos processamento de dados, publicados por fontes oficiais (como o Moniteur Belge / Belgisch Staatsblad), em combinacao com dados adquiridos de outras instituicoes.",
+        "name": "Comércio de inteligência comercial",
+        "description": "Venda após processamento de dados, publicados por fontes oficiais (como o Moniteur Belge / Belgisch Staatsblad), em combinação com dados adquiridos de outras instituições.",
         "article": null,
         "url": ""
       }
     ]
   },
   "Base para processamento": {
-    "Generico": [
+    "Genérico": [
       {
         "name": "Consentimento do titular dos dados",
-        "description": "O titular dos dados deu consentimento para o processamento de seus dados pessoais para uma ou mais finalidades especificas (Artigo 6 (1) (a) do GDPR). \n Observe que o consentimento deve atender aos requisitos determinados pelo Artigo 7 do GDPR.",
+        "description": "O titular dos dados deu consentimento para o processamento de seus dados pessoais para uma ou mais finalidades específicas (Artigo 6 (1) (a) do GDPR). \n Observe que o consentimento deve atender aos requisitos determinados pelo Artigo 7 do GDPR.",
         "article": 7.1,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm"
       },
       {
-        "name": "Necessario para a execucao de um contrato",
-        "description": "quando necessario para a execucao de contrato ou de procedimentos preliminares relacionados a contrato do qual seja parte o titular, a pedido do titular dos dados",
+        "name": "Necessário para a execução de um contrato",
+        "description": "quando necessário para a execução de contrato ou de procedimentos preliminares relacionados a contrato do qual seja parte o titular, a pedido do titular dos dados",
         "article": 7.5,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm"
       },
       {
-        "name": "Obrigacao Legal",
-        "description": "para o cumprimento de obrigacao legal ou regulatoria pelo controlador.",
+        "name": "Obrigação Legal",
+        "description": "para o cumprimento de obrigação legal ou regulatória pelo controlador.",
         "article": 7.2,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm"
       },
       {
-        "name": "Protecao dos interesses vitais do titular dos dados",
-        "description": "O tratamento e necessario para proteger os interesses vitais do titular dos dados ou de outra pessoa fisica",
+        "name": "Proteção dos interesses vitais do titular dos dados",
+        "description": "O tratamento é necessário para proteger os interesses vitais do titular dos dados ou de outra pessoa física",
         "article": 6,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm"
       },
       {
-        "name": "Tarefa realizada no interesse publico ou no exercicio da autoridade oficial",
-        "description": "para o exercicio regular de direitos em processo judicial, administrativo ou arbitral, esse ultimo nos termos da Lei nº 9.307, de 23 de setembro de 1996 (Lei de Arbitragem).",
+        "name": "Tarefa realizada no interesse público ou no exercício da autoridade oficial",
+        "description": "para o exercício regular de direitos em processo judicial, administrativo ou arbitral, esse último nos termos da Lei nº 9.307, de 23 de setembro de 1996 (Lei de Arbitragem).",
         "article": 7.6,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm"
       },
       {
-        "name": "Protecao da Vida",
-        "description": "para a protecao da vida ou da incolumidade fisica do titular ou de terceiro.",
+        "name": "Proteção da Vida",
+        "description": "para a proteção da vida ou da incolumidade física do titular ou de terceiro.",
         "article": 7.7,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm"
       }
     ]
   },
   "Lista Indicativa de Categorias de Dados Funcionais": {
-    "Dados de identificacao": [
+    "Dados de identificação": [
       {
         "name": "PII",
-        "description": "Nome, cargo, endereco (trabalho e casa), enderecos anteriores, numero de telefone (trabalho e casa), IDs atribuidos pelo controlador.",
+        "description": "Nome, cargo, endereço (trabalho e casa), endereços anteriores, número de telefone (trabalho e casa), IDs atribuídos pelo controlador.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Informacoes de identificacao atribuidas por instituicoes governamentais, alem do numero da previdencia social",
-        "description": "Numero da carteira de identidade, numero do passaporte, numero da carteira de motorista, numero da placa do carro, etc.",
+        "name": "Informações de identificação atribuídas por instituições governamentais, além do número da previdência social",
+        "description": "Número da carteira de identidade, número do passaporte, número da carteira de motorista, número da placa do carro, etc.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Dados de identificacao eletronica",
-        "description": "Enderecos IP, cookies, horarios de conexao, etc.",
+        "name": "Dados de identificação eletrônica",
+        "description": "Endereços IP, cookies, horários de conexão, etc.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Dados de localizacao eletronica",
+        "name": "Dados de localização eletrônica",
         "description": "Dados de torre de celular, dados de GPS, etc.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Dados de identificacao biometrica",
-        "description": "Dados de DNA, impressoes digitais e de voz, varreduras da iris, reconhecimento facial, reconhecimento da forma do dedo ou da mao, assinaturas dinamicas, etc.",
+        "name": "Dados de identificação biométrica",
+        "description": "Dados de DNA, impressões digitais e de voz, varreduras da íris, reconhecimento facial, reconhecimento da forma do dedo ou da mão, assinaturas dinâmicas, etc.",
         "article": null,
         "url": "",
         "special": false
@@ -486,50 +486,50 @@
     ],
     "Dados financeiros especiais": [
       {
-        "name": "Dados de identificacao financeira",
-        "description": "Numeros de identificacao, numeros de contas bancarias, numeros de cartao de credito ou debito, codigos secretos.",
+        "name": "Dados de identificação financeira",
+        "description": "Números de identificação, números de contas bancárias, números de cartão de crédito ou débito, códigos secretos.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Meios Financeiros",
-        "description": "Renda, posses, investimentos, renda total, renda profissional, poupanca, datas de inicio e termino de investimentos, renda de investimento, dividas sobre ativos.",
+        "description": "Renda, posses, investimentos, renda total, renda profissional, poupança, datas de início e término de investimentos, renda de investimento, dívidas sobre ativos.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Dividas e despesas",
-        "description": "Despesas totais, aluguel, emprestimos, hipotecas e outras formas de credito.",
+        "name": "Dívidas e despesas",
+        "description": "Despesas totais, aluguel, empréstimos, hipotecas e outras formas de crédito.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Solvencia",
-        "description": "Avaliacao da receita, do estatuto financeiro, da solvencia.",
+        "name": "Solvência",
+        "description": "Avaliação da receita, do estatuto financeiro, da solvência.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Emprestimos, hipotecas, linhas de credito",
-        "description": "Natureza do emprestimo, montante emprestado, saldo remanescente, data de inicio, periodo do emprestimo, taxa de juros, visao geral do pagamento, detalhes relativos as garantias.",
+        "name": "Empréstimos, hipotecas, linhas de crédito",
+        "description": "Natureza do empréstimo, montante emprestado, saldo remanescente, data de início, período do empréstimo, taxa de juros, visão geral do pagamento, detalhes relativos às garantias.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Assistencia financeira",
-        "description": "Beneficios, assistencia, presentes, subsidios.",
+        "name": "Assistência financeira",
+        "description": "Benefícios, assistência, presentes, subsídios.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Detalhes da apolice de seguro",
-        "description": "Natureza da apolice de seguro, detalhes sobre os riscos cobertos, valores segurados, periodo segurado, data de rescisao, pagamentos efetuados, recebidos ou perdidos, situacao do contrat",
+        "name": "Detalhes da apólice de seguro",
+        "description": "Natureza da apólice de seguro, detalhes sobre os riscos cobertos, valores segurados, período segurado, data de rescisão, pagamentos efetuados, recebidos ou perdidos, situação do contrat",
         "article": null,
         "url": "",
         "special": false
@@ -542,42 +542,42 @@
         "special": false
       },
       {
-        "name": "Detalhes do plano de pensao",
-        "description": "Valores pagos e a pagar pelo titular dos dados, linhas de credito concedidas, fiancas, forma de pagamento, visao geral do pagamento, depositos e outras garantias.",
+        "name": "Detalhes do plano de pensão",
+        "description": "Valores pagos e a pagar pelo titular dos dados, linhas de crédito concedidas, fianças, forma de pagamento, visão geral do pagamento, depósitos e outras garantias.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Compensation",
-        "description": "Detalhes sobre indenizacoes reclamadas, valores pagos ou outros tipos de compensacao.",
+        "description": "Detalhes sobre indenizações reclamadas, valores pagos ou outros tipos de compensação.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Atividades profissionais",
-        "description": "Atividades profissionais desempenhadas pelo titular dos dados: natureza da atividade, natureza dos bens ou servicos utilizados ou prestados pela pessoa inscrita no registo, relacoes comerciais.",
+        "description": "Atividades profissionais desempenhadas pelo titular dos dados: natureza da atividade, natureza dos bens ou serviços utilizados ou prestados pela pessoa inscrita no registo, relações comerciais.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Acordos comerciais",
-        "description": "Detalhes sobre acordos ou acordos comerciais, acordos sobre representacao ou acordos legais, detalhes sobre agentes.",
+        "description": "Detalhes sobre acordos ou acordos comerciais, acordos sobre representação ou acordos legais, detalhes sobre agentes.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Permissoes",
-        "description": "Licencas detidas pelos titulares dos dados.",
+        "name": "Permissões",
+        "description": "Licenças detidas pelos titulares dos dados.",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Caracteristicas pessoais": [
+    "Características pessoais": [
       {
         "name": "Detalhes Pessoais",
         "description": "Idade, sexo, data de nascimento, local de nascimento, estado civil, nacionalidade.",
@@ -587,14 +587,14 @@
       },
       {
         "name": "Detalhes Militares",
-        "description": "Estatuto militar, visao geral militar, distincoes militares.",
+        "description": "Estatuto militar, visão geral militar, distinções militares.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Status de imigrante",
-        "description": "Detalhes relativos ao visto, autorizacao de trabalho, residencia ou limitacoes de movimento, condicoes especiais relacionadas com a autorizacao de residencia.",
+        "description": "Detalhes relativos ao visto, autorização de trabalho, residência ou limitações de movimento, condições especiais relacionadas com a autorização de residência.",
         "article": null,
         "url": "",
         "special": false
@@ -602,38 +602,38 @@
     ],
     "Physical details": [
       {
-        "name": "Descicao Fisica",
-        "description": "Altura, peso, cor do cabelo, cor dos olhos, caracteristicas distintivas.",
+        "name": "Descição Física",
+        "description": "Altura, peso, cor do cabelo, cor dos olhos, características distintivas.",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Habitos privados": [
+    "Hábitos privados": [
       {
-        "name": "Habitos",
-        "description": "Uso de tabaco, uso de alcool.",
+        "name": "Hábitos",
+        "description": "Uso de tabaco, uso de álcool.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Estilo de Vida",
-        "description": "Detalhes sobre o uso de bens ou servicos, comportamento dos titulares dos dados ou seus familiares.",
+        "description": "Detalhes sobre o uso de bens ou serviços, comportamento dos titulares dos dados ou seus familiares.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Detalhes de Viagens e movimentacoes",
-        "description": "Informacoes sobre residencias e movimentos anteriores, vistos de viagem, autorizacoes de trabalho.",
+        "name": "Detalhes de Viagens e movimentações",
+        "description": "Informações sobre residências e movimentos anteriores, vistos de viagem, autorizações de trabalho.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Contatos Sociais",
-        "description": "Amigos, parceiros de negocios, relacionamentos com pessoas que nao sejam familiares proximos.",
+        "description": "Amigos, parceiros de negócios, relacionamentos com pessoas que não sejam familiares próximos.",
         "article": null,
         "url": "",
         "special": false
@@ -646,29 +646,29 @@
         "special": false
       },
       {
-        "name": "Mandatos publicos",
-        "description": "Funcoes dentro do governo local, regional, nacional ou federal, participacao em comites governamentais, grupos de trabalho ou orgaos deliberativos, etc.",
+        "name": "Mandatos públicos",
+        "description": "Funções dentro do governo local, regional, nacional ou federal, participação em comitês governamentais, grupos de trabalho ou órgãos deliberativos, etc.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Reclamacoes, incidentes ou acidentes",
-        "description": "Informacoes sobre um acidente, incidente ou reclamacao em que o titular dos dados esteja envolvido, a natureza dos danos ou lesoes, pessoas envolvidas, testemunhas.",
+        "name": "Reclamações, incidentes ou acidentes",
+        "description": "Informações sobre um acidente, incidente ou reclamação em que o titular dos dados esteja envolvido, a natureza dos danos ou lesões, pessoas envolvidas, testemunhas.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Distincoes",
-        "description": "Distincoes civis, religiosas ou militares.",
+        "name": "Distinções",
+        "description": "Distinções civis, religiosas ou militares.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Uso de midia",
-        "description": "Uso de midia e meios de comunicacao.",
+        "name": "Uso de mídia",
+        "description": "Uso de mídia e meios de comunicação.",
         "article": null,
         "url": "",
         "special": false
@@ -676,31 +676,31 @@
     ],
     "Psychological details": [
       {
-        "name": "Descricoes psicologicas",
-        "description": "Opinioes sobre personalidade ou carater.",
+        "name": "Descrições psicológicas",
+        "description": "Opiniões sobre personalidade ou caráter.",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Composicao familiar": [
+    "Composição familiar": [
       {
-        "name": "Casamento ou forma atual de coabitacao",
-        "description": "Nome do conjuge ou companheiro, nome de solteira do conjuge ou companheiro, data do casamento, data do contrato de coabitacao, numero de filhos, etc.",
+        "name": "Casamento ou forma atual de coabitação",
+        "description": "Nome do cônjuge ou companheiro, nome de solteira do cônjuge ou companheiro, data do casamento, data do contrato de coabitação, número de filhos, etc.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Historia conjugal",
-        "description": "Detalhes sobre casamentos ou parcerias anteriores, divorcios, separacoes, nomes de parceiros anteriores.",
+        "name": "História conjugal",
+        "description": "Detalhes sobre casamentos ou parcerias anteriores, divórcios, separações, nomes de parceiros anteriores.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Detalhes sobre outros familiares ou membros da familia",
-        "description": "Filhos, dependentes, outros membros da familia, outros parentes de sangue proximos, pais e descendentes.",
+        "name": "Detalhes sobre outros familiares ou membros da família",
+        "description": "Filhos, dependentes, outros membros da família, outros parentes de sangue próximos, pais e descendentes.",
         "article": null,
         "url": "",
         "special": false
@@ -717,8 +717,8 @@
     ],
     "Memberships": [
       {
-        "name": "Associacoes (exceto profissionais, politicas ou em sindicatos)",
-        "description": "Participacao em organizacoes de caridade ou beneficentes, clubes, parcerias, sindicatos, organizacoes, grupos, etc.",
+        "name": "Associações (exceto profissionais, políticas ou em sindicatos)",
+        "description": "Participação em organizações de caridade ou beneficentes, clubes, parcerias, sindicatos, organizações, grupos, etc.",
         "article": null,
         "url": "",
         "special": false
@@ -727,234 +727,234 @@
     "Categorias de dados legais": [
       {
         "name": "Dados legais relacionados a suspeitas",
-        "description": "Suspeitas de violacoes, conexoes conspiratorias com criminosos conhecidos. Inqueritos ou acoes judiciais (civis ou criminais) empreendidas por ou contra o titular dos dados.",
+        "description": "Suspeitas de violações, conexões conspiratórias com criminosos conhecidos. Inquéritos ou ações judiciais (civis ou criminais) empreendidas por ou contra o titular dos dados.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Dados legais sobre condenacoes e sentencas",
-        "description": "Conviccoes e sentencas.",
+        "name": "Dados legais sobre condenações e sentenças",
+        "description": "Convicções e sentenças.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Dados legais sobre acoes judiciais",
-        "description": "Tutela, administracao temporaria, internamento, colocacao.",
+        "name": "Dados legais sobre ações judiciais",
+        "description": "Tutela, administração temporária, internamento, colocação.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Dados legais sobre penalidades administrativas",
-        "description": "Penalidades administrativas:\n* de natureza puramente disciplinar;\n* aquelas que podem ser impostas a pessoas que nao estao no servico publico, mas cooperam com elas (medicos, farmaceuticos, paramedicos, empreiteiros de obras publicas);\n* aquelas que podem ser impostas a pessoas que usam servicos publicos;\n * aquelas que podem ser impostas por nao cumprimento de medidas legais ou regulamentares, por exemplo jogar lixo na via publica.",
+        "description": "Penalidades administrativas:\n* de natureza puramente disciplinar;\n* aquelas que podem ser impostas a pessoas que não estão no serviço público, mas cooperam com elas (médicos, farmacêuticos, paramédicos, empreiteiros de obras públicas);\n* aquelas que podem ser impostas a pessoas que usam serviços públicos;\n * aquelas que podem ser impostas por não cumprimento de medidas legais ou regulamentares, por exemplo jogar lixo na via pública.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Dados legais sobre DNA",
-        "description": "Dados de DNA processados no contexto da lei de 22 de marco de 1999 relacionados a procedimentos de identificacao por meio de analise de DNA em processos criminais.",
+        "description": "Dados de DNA processados no contexto da lei de 22 de março de 1999 relacionados a procedimentos de identificação por meio de análise de DNA em processos criminais.",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Habitos de consumo": [
+    "Hábitos de consumo": [
       {
         "name": "Dados de aluguel",
-        "description": "Detalhes sobre os bens e servicos fornecidos, emprestados ou alugados ao titular dos dados.",
+        "description": "Detalhes sobre os bens e serviços fornecidos, emprestados ou alugados ao titular dos dados.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Dados de emprestimo",
-        "description": "Detalhes sobre os bens e servicos fornecidos, emprestados ou alugados pelo titular dos dados.",
+        "name": "Dados de empréstimo",
+        "description": "Detalhes sobre os bens e serviços fornecidos, emprestados ou alugados pelo titular dos dados.",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Dados sobre residencia": [
+    "Dados sobre residência": [
       {
-        "name": "Dados sobre residencia",
-        "description": "Endereco da residencia: natureza da residencia, propriedade propria ou alugada, duracao da residencia nesse endereco, aluguel, custos, classificacao da residencia, detalhes sobre a avaliacao, nomes das pessoas que possuem as chaves.",
+        "name": "Dados sobre residência",
+        "description": "Endereço da residência: natureza da residência, propriedade própria ou alugada, duração da residência nesse endereço, aluguel, custos, classificação da residência, detalhes sobre a avaliação, nomes das pessoas que possuem as chaves.",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Dados sobre Saude": [
+    "Dados sobre Saúde": [
       {
-        "name": "Dados de saude fisica",
-        "description": "Arquivo medico, relatorio medico, informacoes diagnosticas, tratamento, resultados de analises, deficiencia ou enfermidade, dieta alimentar; outras demandas especiais relacionadas a saude no gerenciamento de uma viagem ou residencia.",
+        "name": "Dados de saúde física",
+        "description": "Arquivo médico, relatório médico, informações diagnósticas, tratamento, resultados de análises, deficiência ou enfermidade, dieta alimentar; outras demandas especiais relacionadas à saúde no gerenciamento de uma viagem ou residência.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Dados de saude mental",
-        "description": "Arquivo medico, relatorio medico, informacoes de diagnostico, tratamento, resultados de analises.",
+        "name": "Dados de saúde mental",
+        "description": "Arquivo médico, relatório médico, informações de diagnóstico, tratamento, resultados de análises.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Dados sobre situacoes de risco e comportamento de risco",
-        "description": "Situacoes de risco e comportamento de risco.",
+        "name": "Dados sobre situações de risco e comportamento de risco",
+        "description": "Situações de risco e comportamento de risco.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Dados geneticos relacionados a estudos populacionais, pesquisas geneticas, etc.",
-        "description": "Dados geneticos relacionados a estudos populacionais, pesquisas geneticas, etc.",
+        "name": "Dados genéticos relacionados a estudos populacionais, pesquisas genéticas, etc.",
+        "description": "Dados genéticos relacionados a estudos populacionais, pesquisas genéticas, etc.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Dados de recuperacao",
-        "description": "Dados relacionados aos meios e procedimentos usados durante um tratamento medico e paramedico.",
+        "name": "Dados de recuperação",
+        "description": "Dados relacionados aos meios e procedimentos usados durante um tratamento médico e paramédico.",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Educacao e treinamento": [
+    "Educação e treinamento": [
       {
-        "name": "Curriculo academico",
-        "description": "Visao geral das escolas, instituicoes, faculdades e universidades frequentadas, natureza dos cursos concluidos, diplomas ou certificados obtidos, resultados de exames, outros diplomas concedidos, avaliacao do progresso dos estudos.",
+        "name": "Currículo acadêmico",
+        "description": "Visão geral das escolas, instituições, faculdades e universidades frequentadas, natureza dos cursos concluídos, diplomas ou certificados obtidos, resultados de exames, outros diplomas concedidos, avaliação do progresso dos estudos.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Visao geral financeira dos estudos",
-        "description": "Taxas de inscricao e custos pagos, financiamento, formas de pagamento, registros de pagamento.",
+        "name": "Visão geral financeira dos estudos",
+        "description": "Taxas de inscrição e custos pagos, financiamento, formas de pagamento, registros de pagamento.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Qualificacoes profissionais",
-        "description": "Certificados e treinamentos profissionais, licencas especiais (CREA, OAB, etc.).",
+        "name": "Qualificações profissionais",
+        "description": "Certificados e treinamentos profissionais, licenças especiais (CREA, OAB, etc.).",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Experiencia profissional",
-        "description": "Interesses profissionais, interesses de pesquisa, interesses academicos, especializacoes, experiencia de ensino, consultas.",
+        "name": "Experiência profissional",
+        "description": "Interesses profissionais, interesses de pesquisa, interesses acadêmicos, especializações, experiência de ensino, consultas.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Filiacao e / ou participacao em organizacoes profissionais",
-        "description": "Detalhes sobre os grupos, comites ou comissoes envolvidos, funcoes exercidas, interesses especiais e registros de participacao.",
+        "name": "Filiação e / ou participação em organizações profissionais",
+        "description": "Detalhes sobre os grupos, comitês ou comissões envolvidos, funções exercidas, interesses especiais e registros de participação.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Publicacoes",
-        "description": "Livros, artigos, relatorios, materiais audiovisuais publicados.",
+        "name": "Publicações",
+        "description": "Livros, artigos, relatórios, materiais audiovisuais publicados.",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Profissao e emprego": [
+    "Profissão e emprego": [
       {
         "name": "Emprego atual",
-        "description": "Empregador, descricao do cargo e funcao, antiguidade, data de recrutamento, local de trabalho, especializacao ou tipo de empresa, modos e condicoes de trabalho, cargos anteriores e experiencia anterior de trabalho no mesmo empregador.",
+        "description": "Empregador, descrição do cargo e função, antiguidade, data de recrutamento, local de trabalho, especialização ou tipo de empresa, modos e condições de trabalho, cargos anteriores e experiência anterior de trabalho no mesmo empregador.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Recrutamento",
-        "description": "Data de recrutamento, metodo de recrutamento, fonte de recrutamento, referencias, detalhes relacionados com o periodo de estagio.",
+        "description": "Data de recrutamento, método de recrutamento, fonte de recrutamento, referências, detalhes relacionados com o período de estágio.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Rescisao de trabalho",
-        "description": "Data de rescisao, motivo, periodo de notificacao, condicoes de rescisao.",
+        "name": "Rescisão de trabalho",
+        "description": "Data de rescisão, motivo, período de notificação, condições de rescisão.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Carreira",
-        "description": "Emprego anterior e empregadores, periodos sem emprego, servico militar.",
+        "description": "Emprego anterior e empregadores, períodos sem emprego, serviço militar.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Absentismo e disciplina",
-        "description": "Registos de absentismo, motivos de ausencia, medidas disciplinares.",
+        "description": "Registos de absentismo, motivos de ausência, medidas disciplinares.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Medicina Ocupacional",
-        "description": "Diminuicao da capacidade de trabalho decorrente de acidente de trabalho, certificacao de primeiros socorros.",
+        "description": "Diminuição da capacidade de trabalho decorrente de acidente de trabalho, certificação de primeiros socorros.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Remuneracoes",
-        "description": "Pagamentos e deducoes, salarios, comissoes, bonus, despesas, subvencoes, vantagens, emprestimos, retencoes de impostos, retencoes do FICA, contribuicoes sindicais, metodos de pagamento, data do aumento salarial mais recente.",
+        "name": "Remunerações",
+        "description": "Pagamentos e deduções, salários, comissões, bônus, despesas, subvenções, vantagens, empréstimos, retenções de impostos, retenções do FICA, contribuições sindicais, métodos de pagamento, data do aumento salarial mais recente.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Bens em posse do funcionario",
-        "description": "Carro, ferramentas, pecas sobressalentes, ferramentas de referencia, outros objetos em posse do funcionario.",
+        "name": "Bens em posse do funcionário",
+        "description": "Carro, ferramentas, peças sobressalentes, ferramentas de referência, outros objetos em posse do funcionário.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Organizacao do Trabalho",
-        "description": "Responsabilidades atuais, projetos, horas faturaveis, salario por hora, horas trabalhadas.",
+        "name": "Organização do Trabalho",
+        "description": "Responsabilidades atuais, projetos, horas faturáveis, salário por hora, horas trabalhadas.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Analise",
-        "description": "Avaliacao de desempenho, possibilidades.",
+        "name": "Análise",
+        "description": "Avaliação de desempenho, possibilidades.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Treinamento para a posicao",
-        "description": "Detalhes sobre o treinamento exigido e recebido para o cargo, bem como as qualificacoes e autoridade obtidas.",
+        "name": "Treinamento para a posição",
+        "description": "Detalhes sobre o treinamento exigido e recebido para o cargo, bem como as qualificações e autoridade obtidas.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Seguranca",
-        "description": "Senhas, codigos de seguranca, niveis em que as permissoes sao concedidas.",
+        "name": "Segurança",
+        "description": "Senhas, códigos de segurança, níveis em que as permissões são concedidas.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Uso de tecnologia",
-        "description": "Avaliacao da utilizacao de tecnologia (Internet, email, etc.).",
+        "description": "Avaliação da utilização de tecnologia (Internet, email, etc.).",
         "article": null,
         "url": "",
         "special": false
@@ -969,10 +969,10 @@
         "special": false
       }
     ],
-    "Dados raciais ou etnicos": [
+    "Dados raciais ou étnicos": [
       {
-        "name": "Dados raciais ou etnicos",
-        "description": "Dados raciais ou etnicos",
+        "name": "Dados raciais ou étnicos",
+        "description": "Dados raciais ou étnicos",
         "article": null,
         "url": "",
         "special": false
@@ -981,73 +981,73 @@
     "Dados sobre a vida sexual": [
       {
         "name": "Dados sobre a vida sexual",
-        "description": "Orientacao sexual, etc.",
+        "description": "Orientação sexual, etc.",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Opinioes politicas": [
+    "Opiniões políticas": [
       {
-        "name": "Opinioes politicas",
-        "description": "Conviccoes politicas, preferencia partidaria.",
+        "name": "Opiniões políticas",
+        "description": "Convicções políticas, preferência partidária.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Afiliacao politica",
-        "description": "Filiacao a um partido politico, funcoes politicas exercidas atualmente.",
+        "name": "Afiliação política",
+        "description": "Filiação a um partido político, funções políticas exercidas atualmente.",
         "article": null,
         "url": "",
         "special": false
       },
       {
         "name": "Membership in an interest group or militant organization",
-        "description": "Membro de um grupo de interesse ou organizacao militante",
+        "description": "Membro de um grupo de interesse ou organização militante",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Filiacao a um sindicato": [
+    "Filiação a um sindicato": [
       {
-        "name": "Filiacao a um sindicato",
-        "description": "Filiacao a sindicato ou organizacao similar, funcoes exercidas.",
+        "name": "Filiação a um sindicato",
+        "description": "Filiação a sindicato ou organização similar, funções exercidas.",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Crencas filosoficas ou religiosas": [
+    "Crenças filosóficas ou religiosas": [
       {
-        "name": "Crencas filosoficas",
-        "description": "Crencas filosoficas ou religiosas",
+        "name": "Crenças filosóficas",
+        "description": "Crenças filosóficas ou religiosas",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Gravacoes em video": [
+    "Gravações em vídeo": [
       {
         "name": "Imagens",
-        "description": "Gravacao de camera, gravacao fotografica, gravacao de video, fotos digitais, etc.",
+        "description": "Gravação de câmera, gravação fotográfica, gravação de vídeo, fotos digitais, etc.",
         "article": null,
         "url": "",
         "special": false
       },
       {
-        "name": "Imagens de vigilancia",
-        "description": "Imagens de cameras de seguranca.",
+        "name": "Imagens de vigilância",
+        "description": "Imagens de câmeras de segurança.",
         "article": null,
         "url": "",
         "special": false
       }
     ],
-    "Gravacoes de som": [
+    "Gravações de som": [
       {
-        "name": "Gravacoes de som",
-        "description": "Gravacoes de fita, gravacoes de telefone, etc.",
+        "name": "Gravações de som",
+        "description": "Gravações de fita, gravações de telefone, etc.",
         "article": null,
         "url": "",
         "special": false
@@ -1055,64 +1055,64 @@
     ],
     "Especial - normalmente proibido": [
       {
-        "name": "Dados geneticos para identificacao pessoal",
-        "description": "Dados geneticos com o proposito de identificar uma pessoa de maneira unica",
+        "name": "Dados genéticos para identificação pessoal",
+        "description": "Dados genéticos com o propósito de identificar uma pessoa de maneira única",
         "article": 5.2,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm",
         "special": true
       },
       {
-        "name": "Dados biometricos para identificacao de pessoas",
-        "description": "Dados biometricos com o proposito de identificar uma pessoa de maneira unica",
+        "name": "Dados biométricos para identificação de pessoas",
+        "description": "Dados biométricos com o propósito de identificar uma pessoa de maneira única",
         "article": 5.2,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm",
         "special": true
       },
       {
-        "name": "Dados de Saude",
-        "description": "Dados sobre o estado de saude de uma pessoa",
+        "name": "Dados de Saúde",
+        "description": "Dados sobre o estado de saúde de uma pessoa",
         "article": 5.2,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm",
         "special": true
       },
       {
-        "name": "Origem racial ou etnica",
-        "description": "Dados que revelam origem racial ou etnica",
+        "name": "Origem racial ou étnica",
+        "description": "Dados que revelam origem racial ou étnica",
         "article": 5.2,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm",
         "special": true
       },
       {
-        "name": "Opinioes politicas",
-        "description": "Dados revelando opinioes politicas",
+        "name": "Opiniões políticas",
+        "description": "Dados revelando opiniões políticas",
         "article": 5.2,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm",
         "special": true
       },
       {
-        "name": "Crencas religiosas ou filosoficas",
-        "description": "Dados que revelam crencas religiosas ou filosoficas",
+        "name": "Crenças religiosas ou filosóficas",
+        "description": "Dados que revelam crenças religiosas ou filosóficas",
         "article": 5.2,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm",
         "special": true
       },
       {
-        "name": "Filiacao sindical",
-        "description": "Dados revelando filiacao sindical",
+        "name": "Filiação sindical",
+        "description": "Dados revelando filiação sindical",
         "article": 5.2,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm",
         "special": true
       },
       {
-        "name": "Dados relacionados a vida sexual ou orientacao sexual de alguem",
-        "description": "Vida sexual ou orientacao sexual",
+        "name": "Dados relacionados à vida sexual ou orientação sexual de alguém",
+        "description": "Vida sexual ou orientação sexual",
         "article": 9.0,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm",
         "special": true
       },
       {
-        "name": "Condenacoes criminais e ofensas",
-        "description": "Tratamento de dados pessoais relativos a condenacoes criminais e infracoes",
+        "name": "Condenações criminais e ofensas",
+        "description": "Tratamento de dados pessoais relativos a condenações criminais e infrações",
         "article": 10.0,
         "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679",
         "special": true
@@ -1125,22 +1125,22 @@
         "special": true
       },
       {
-        "name": "Dados arriscados para os direitos e liberdades das pessoas fisicas",
-        "description": "Dados que geralmente sao considerados como implicando em uma elevacao do possivel risco para os direitos e liberdades das pessoas fisicas",
+        "name": "Dados arriscados para os direitos e liberdades das pessoas físicas",
+        "description": "Dados que geralmente são considerados como implicando em uma elevação do possível risco para os direitos e liberdades das pessoas físicas",
         "article": 34.0,
         "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679",
         "special": true
       },
       {
-        "name": "Dados de comunicacao eletronica",
-        "description": "Os controladores de dados no setor de comunicacoes eletronicas devem cumprir uma politica de seguranca especifica que proteja os dados pessoais contra destruicao acidental ou ilegal, perda ou alteracao acidental e armazenamento, processamento, acesso ou divulgacao nao autorizada ou ilegal de dados pessoais; garantir que os dados pessoais so possam ser acessados por pessoal autorizado para fins legalmente autorizados; e fornecer informacoes aos assinantes sobre qualquer risco especifico de violacao da seguranca de [uma] rede de comunicacoes publicas.",
+        "name": "Dados de comunicação eletrônica",
+        "description": "Os controladores de dados no setor de comunicações eletrônicas devem cumprir uma política de segurança específica que proteja os dados pessoais contra destruição acidental ou ilegal, perda ou alteração acidental e armazenamento, processamento, acesso ou divulgação não autorizada ou ilegal de dados pessoais; garantir que os dados pessoais só possam ser acessados por pessoal autorizado para fins legalmente autorizados; e fornecer informações aos assinantes sobre qualquer risco específico de violação da segurança de [uma] rede de comunicações públicas.",
         "article": 95.0,
         "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32002L0058&from=EN",
         "special": true
       },
       {
-        "name": "Dados de localizacao",
-        "description": "Voce so pode processar dados de localizacao (informacoes da rede ou servico sobre a localizacao de um telefone ou outro dispositivo) com a autoridade da rede, servico ou provedor de servicos de valor agregado, e somente se for anonimo; ou voce tem consentimento para usa-lo para um servico de valor agregado.",
+        "name": "Dados de localização",
+        "description": "Você só pode processar dados de localização (informações da rede ou serviço sobre a localização de um telefone ou outro dispositivo) com a autoridade da rede, serviço ou provedor de serviços de valor agregado, e somente se for anônimo; ou você tem consentimento para usá-lo para um serviço de valor agregado.",
         "article": 9.0,
         "url": "https://ico.org.uk/for-organisations/guide-to-pecr/communications-networks-and-services/location-data/",
         "special": true
@@ -1153,8 +1153,8 @@
         "special": true
       },
       {
-        "name": "Atividades domesticas muito intrusivas",
-        "description": "Informacoes processadas por uma pessoa fisica no curso de atividades puramente pessoais ou domesticas (como servicos de computacao em nuvem para gerenciamento de documentos pessoais, servicos de e-mail, diarios, leitores eletronicos equipados com recursos de anotacoes e varios aplicativos de registro de vida que podem conter informacoes muito pessoais), cuja divulgacao ou processamento para qualquer outra finalidade que nao atividades domesticas pode ser considerada muito intrusiva.",
+        "name": "Atividades domésticas muito intrusivas",
+        "description": "Informações processadas por uma pessoa física no curso de atividades puramente pessoais ou domésticas (como serviços de computação em nuvem para gerenciamento de documentos pessoais, serviços de e-mail, diários, leitores eletrônicos equipados com recursos de anotações e vários aplicativos de registro de vida que podem conter informações muito pessoais), cuja divulgação ou processamento para qualquer outra finalidade que não atividades domésticas pode ser considerada muito intrusiva.",
         "article": 10.0,
         "url": "http://ec.europa.eu/newsroom/document.cfm%3Fdoc_id%3D44137",
         "special": true
@@ -1162,7 +1162,7 @@
     ]
   },
   "Tipo de Processamento": {
-    "Generico": [
+    "Genérico": [
       {
         "name": "Normal",
         "description": "Insira se nenhum dos outros tipos listados se aplicar.",
@@ -1170,65 +1170,65 @@
         "url": ""
       },
       {
-        "name": "Avaliacao ou revisao de pessoas",
-        "description": "Avaliacao ou revisao de pessoas, incluindo perfis e prognosticos",
+        "name": "Avaliação ou revisão de pessoas",
+        "description": "Avaliação ou revisão de pessoas, incluindo perfis e prognósticos",
         "article": null,
         "url": ""
       },
       {
-        "name": "Decisoes automatizadas com consequencias legais",
-        "description": "Decisoes automatizadas com consequencias legais ou consequencias substanciais semelhantes",
+        "name": "Decisões automatizadas com consequências legais",
+        "description": "Decisões automatizadas com consequências legais ou consequências substanciais semelhantes",
         "article": null,
         "url": ""
       },
       {
-        "name": "Monitoramento sistematico",
-        "description": "Monitoramento sistematico (rastreamento, monitoramento ou verificacao do titular dos dados) (som, foto ou gravacoes de video)",
+        "name": "Monitoramento sistemático",
+        "description": "Monitoramento sistemático (rastreamento, monitoramento ou verificação do titular dos dados) (som, foto ou gravações de vídeo)",
         "article": null,
         "url": ""
       },
       {
         "name": "Atividades de processamento em grande escala",
-        "description": "Atividades de processamento em grande escala ou atividades de processamento com consequencias para um grande numero de partes interessadas",
+        "description": "Atividades de processamento em grande escala ou atividades de processamento com consequências para um grande número de partes interessadas",
         "article": null,
         "url": ""
       },
       {
-        "name": "Combinacao de dados inesperados pelos titulares dos dados",
-        "description": "Combinacao ou fusao de colecoes de dados que os titulares dos dados nao podem esperar razoavelmente",
+        "name": "Combinação de dados inesperados pelos titulares dos dados",
+        "description": "Combinação ou fusão de coleções de dados que os titulares dos dados não podem esperar razoavelmente",
         "article": null,
         "url": ""
       },
       {
-        "name": "Prevencao de titulares de dados de exercer um direito",
-        "description": "Processamento de dados que impede que os titulares dos dados exercam um direito, usem um servico ou concluam um contrato",
+        "name": "Prevenção de titulares de dados de exercer um direito",
+        "description": "Processamento de dados que impede que os titulares dos dados exerçam um direito, usem um serviço ou concluam um contrato",
         "article": null,
         "url": ""
       },
       {
         "name": "Uso de novas tecnologias e meios organizacionais",
-        "description": "Uso de novas tecnologias ou aplicacao de meios tecnicos e organizacionais",
+        "description": "Uso de novas tecnologias ou aplicação de meios técnicos e organizacionais",
         "article": null,
         "url": ""
       },
       {
-        "name": "Monitoramento em larga escala de uma area publica",
-        "description": "Monitoramento sistematico de uma area acessivel ao publico em grande escala",
+        "name": "Monitoramento em larga escala de uma área pública",
+        "description": "Monitoramento sistemático de uma área acessível ao público em grande escala",
         "article": null,
         "url": ""
       }
     ]
   },
-  "Lista Indicativa de Categorias de Destinatarios": {
-    "Generico": [
+  "Lista Indicativa de Categorias de Destinatários": {
+    "Genérico": [
       {
-        "name": "O proprio titular dos dados",
+        "name": "O próprio titular dos dados",
         "description": "",
         "article": null,
         "url": ""
       },
       {
-        "name": "Relacoes pessoais do titular dos dados",
+        "name": "Relações pessoais do titular dos dados",
         "description": "",
         "article": null,
         "url": ""
@@ -1240,13 +1240,13 @@
         "url": ""
       },
       {
-        "name": "Empregador ou relacoes comerciais do titular dos dados",
+        "name": "Empregador ou relações comerciais do titular dos dados",
         "description": "",
         "article": null,
         "url": ""
       },
       {
-        "name": "Individuos ou organizacoes em um relacionamento direto com o controlador",
+        "name": "Indivíduos ou organizações em um relacionamento direto com o controlador",
         "description": "",
         "article": null,
         "url": ""
@@ -1258,19 +1258,19 @@
         "url": ""
       },
       {
-        "name": "Servicos publicos",
+        "name": "Serviços públicos",
         "description": "",
         "article": null,
         "url": ""
       },
       {
-        "name": "Tribunais e aplicacao da lei",
+        "name": "Tribunais e aplicação da lei",
         "description": "",
         "article": null,
         "url": ""
       },
       {
-        "name": "Escritorios de beneficios do governo",
+        "name": "Escritórios de benefícios do governo",
         "description": "",
         "article": null,
         "url": ""
@@ -1289,34 +1289,34 @@
       }
     ]
   },
-  "Natureza da transferencia para pais terceiro / organizacao internacional": {
-    "Generico": [
+  "Natureza da transferência para país terceiro / organização internacional": {
+    "Genérico": [
       {
-        "name": "Transferencias com base em uma decisao de adequacao",
-        "description": "GDPR Artigo 45 e LGPD Artigo 5 capitulo XV",
+        "name": "Transferências com base em uma decisão de adequação",
+        "description": "GDPR Artigo 45 e LGPD Artigo 5 capítulo XV",
         "article": 45.0,
         "url": ""
       },
       {
-        "name": "Transferencias com base em salvaguardas adequadas",
+        "name": "Transferências com base em salvaguardas adequadas",
         "description": "GDPR Artigo 46",
         "article": 46.0,
         "url": ""
       },
       {
-        "name": "Transferencias com base em BCRs",
+        "name": "Transferências com base em BCRs",
         "description": "GDPR Artigo 47",
         "article": 47.0,
         "url": ""
       },
       {
-        "name": "Transferencias com base em isencao para situacao especifica",
+        "name": "Transferências com base em isenção para situação específica",
         "description": "GDPR Artigo 49(1)",
         "article": 49.0,
         "url": ""
       },
       {
-        "name": "Transferencia com base nos requisitos do Artigo 49 (2) do GDPR",
+        "name": "Transferência com base nos requisitos do Artigo 49 (2) do GDPR",
         "description": "GDPR Artigo 49(2)",
         "article": 49.0,
         "url": ""
@@ -1324,7 +1324,7 @@
     ]
   },
   "Lista indicativa de categorias de titulares de dados": {
-    "Generico": [
+    "Genérico": [
       {
         "name": "Pacientes",
         "description": "Seus Pacientes",
@@ -1340,8 +1340,8 @@
         "vulnerable": false
       },
       {
-        "name": "Funcionarios",
-        "description": "Seus Funcionarios",
+        "name": "Funcionários",
+        "description": "Seus Funcionários",
         "article": null,
         "url": "",
         "vulnerable": false
@@ -1361,8 +1361,8 @@
         "vulnerable": false
       },
       {
-        "name": "Usuarios do sistema",
-        "description": "Usuarios de seus sistemas",
+        "name": "Usuários do sistema",
+        "description": "Usuários de seus sistemas",
         "article": null,
         "url": "",
         "vulnerable": false
@@ -1375,8 +1375,8 @@
         "vulnerable": false
       },
       {
-        "name": "Titulares de acoes",
-        "description": "Seus Titulares de acoes",
+        "name": "Titulares de ações",
+        "description": "Seus Titulares de ações",
         "article": null,
         "url": "",
         "vulnerable": false

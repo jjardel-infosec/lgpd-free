@@ -148,8 +148,8 @@ class List(NameDesc):
     classification = models.CharField(blank=True, max_length=100, verbose_name=_("Classification"),
                                       help_text=_("Insert a general classification for this entry (if any)"))
     article = models.PositiveIntegerField(null=True, blank=True,
-                                          verbose_name=_("GDPR Article"),
-                                          help_text=_("Reference to GDPR Article (if any)"))
+                                          verbose_name=_("LGPD Article"),
+                                          help_text=_("Reference to LGPD Article (if any)"))
     url = models.URLField(blank=True,
                           verbose_name=_("Reference URL"),
                           help_text=_("Reference URL (if any)")

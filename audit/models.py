@@ -24,9 +24,9 @@ import PyPDF2
 from collections import OrderedDict
 
 HINT_TYPES = OrderedDict([
-                            ('suggestion', _("Suggestions")),
-                            ('issue', _("Issues")),
-                            ('warning', _("Warnings")),
+                            ('suggestion', _("Sugestoes")),
+                            ('issue', _("Problemas")),
+                            ('warning', _("Avisos")),
                         ])
 
 class Hint:
@@ -79,7 +79,7 @@ class HintList:
 
 
 class Base(models.Model):
-    last_update = models.DateTimeField(auto_now=True, verbose_name=_("Last Update"))
+    last_update = models.DateTimeField(auto_now=True, verbose_name=_("Ultima atualizacao"))
 
     def get_hints(self):
         return HintList()
@@ -91,17 +91,17 @@ class Base(models.Model):
 class NameDesc(Base):
     name = models.CharField(unique=True,
                             max_length=100,
-                            verbose_name=_("Name"))
-    description = models.TextField(verbose_name=_("Description"), blank=True)
+                            verbose_name=_("Nome"))
+    description = models.TextField(verbose_name=_("Descricao"), blank=True)
 
     def short_description(self):
         return truncatewords(self.description, 50)
-    short_description.short_description = _("Description")
+    short_description.short_description = _("Descricao")
 
     def get_hints(self):
         hints = HintList()
         if not self.description:
-            hints.append(Hint(obj=self, text=_("Missing description on"), hint_type='warning'))
+            hints.append(Hint(obj=self, text=_("Descricao ausente em"), hint_type='warning'))
         return hints
 
     def __str__(self):
@@ -113,12 +113,12 @@ class NameDesc(Base):
 
 class Organization(NameDesc):
     email = models.EmailField(verbose_name=_("Email"))
-    address = models.CharField(max_length=50, verbose_name=_("Address"))
-    country = models.CharField(max_length=200, verbose_name=_("Country"))
-    telephone = models.CharField(max_length=50, verbose_name=_("Telephone"))
-    statute = models.CharField(max_length=200, verbose_name=_("Statute"))
-    third_country = models.BooleanField(verbose_name=_("Third Country"), help_text=_("Mark this field if the organization resides in a country outside of the European Union (EU) and the European Economic Area (EEA)."))
-    international = models.BooleanField(verbose_name=_("International"), help_text=_("Mark this field if the organization and its subordinate bodies are governed by public international law"))
+    address = models.CharField(max_length=50, verbose_name=_("Endereco"))
+    country = models.CharField(max_length=200, verbose_name=_("Pais"))
+    telephone = models.CharField(max_length=50, verbose_name=_("Telefone"))
+    statute = models.CharField(max_length=200, verbose_name=_("Estatuto"))
+    third_country = models.BooleanField(verbose_name=_("Pais Terceiro - Transferencia Internacioanl"), help_text=_("Mark this field if the organization resides in a country outside of the European Union (EU) and the European Economic Area (EEA)."))
+    international = models.BooleanField(verbose_name=_("Internacional"), help_text=_("Mark this field if the organization and its subordinate bodies are governed by public international law"))
 
     class Meta:
         abstract = True
@@ -134,7 +134,7 @@ class PDFDocument(NameDesc):
         try:
             PyPDF2.PdfFileReader(self.document)
         except Exception as e:
-            raise ValidationError(_("Only PDF files are accepted"))
+            raise ValidationError(_("Somente arquivos PDF sao aceitos"))
 
     def save(self, *args, **kwargs):
         if not self.pk:  # file is new
@@ -146,13 +146,13 @@ class PDFDocument(NameDesc):
 
 class List(NameDesc):
     classification = models.CharField(blank=True, max_length=100, verbose_name=_("Classification"),
-                                      help_text=_("Insert a general classification for this entry (if any)"))
+                                      help_text=_("Insira uma classificacao geral para esta entrada (caso exista)"))
     article = models.PositiveIntegerField(null=True, blank=True,
-                                          verbose_name=_("LGPD Article"),
-                                          help_text=_("Reference to LGPD Article (if any)"))
+                                          verbose_name=_("LGPD Artigo"),
+                                          help_text=_("Referente ao Artigo da  LGPD  (caso exista)"))
     url = models.URLField(blank=True,
-                          verbose_name=_("Reference URL"),
-                          help_text=_("Reference URL (if any)")
+                          verbose_name=_("URL de referência"),
+                          help_text=_("URL de referencia (caso exista)")
                           )
 
     def __str__(self):
@@ -168,100 +168,100 @@ class List(NameDesc):
 
 class ProcessingLegal(List):
     class Meta:
-        verbose_name = _("Legal Base for Processing")
-        verbose_name_plural = _("Legal Bases for Processing")
+        verbose_name = _("Base Legal para Processamento")
+        verbose_name_plural = _("Base Legal para Processamento")
 
 
 class ProcessingPurpose(List):
     class Meta:
-        verbose_name = _("Purpose of Processing")
-        verbose_name_plural = _("Purposes of Processing")
+        verbose_name = _("Objetivo do Processamento")
+        verbose_name_plural = _("Objetivo do Processamento")
 
 
 class ProcessingType(List):
     class Meta:
-        verbose_name = _("Type of Processing")
-        verbose_name_plural = _("Types of Processing")
+        verbose_name = _("Tipo de Processamento")
+        verbose_name_plural = _("Tipo de Processamento")
 
 
 class DataCategory(List):
-    special = models.BooleanField(verbose_name=_("Special Category"),
-                                  help_text=_("Mark this field if the Data Category is special. "
-                                  "The processing of this data category shall normally be prohibited."))
+    special = models.BooleanField(verbose_name=_("Categoria Especial"),
+                                  help_text=_("Marque este campo se a categoria de dados for especial. "
+                                  "O processamento desta categoria de dados normalmente é proibido."))
 
     class Meta:
-        verbose_name = _("Functional Data Category")
-        verbose_name_plural = _("Functional Data Categories")
+        verbose_name = _("Categoria de Dados Funcionais")
+        verbose_name_plural = _("Categoria de Dados Funcionais")
 
 
 class ProcessingActivityClassificationDocument(PDFDocument):
     class Meta:
-        verbose_name = _("Processing Activity Classification Document")
-        verbose_name_plural = _("Processing Activity Classification Documents")
+        verbose_name = _("Documento de Classificacao de Atividades de Processamento")
+        verbose_name_plural = _("Documento de Classificacao de Atividades de Processamento")
 
 
 class ProcessingActivityClassificationLevel(List):
     document = models.ForeignKey(ProcessingActivityClassificationDocument, null=True, on_delete=models.DO_NOTHING,
-                                 verbose_name=_("Processing Activity Classification Document"))
+                                 verbose_name=_("Documento de Classificacao de Atividades de Processamento"))
 
     class Meta:
-        verbose_name = _("Processing Activity Classification Level")
-        verbose_name_plural = _("Processing Activity Classification Levels")
+        verbose_name = _("Nivel de classificacao da atividade de processamento")
+        verbose_name_plural = _("Nivel de classificacao da atividade de processamento")
 
 
 class RecipientCategory(List):
     class Meta:
-        verbose_name = _("Recipient Category")
-        verbose_name_plural = _("Recipient Categories")
+        verbose_name = _("Categoria de Destinatario")
+        verbose_name_plural = _("Categoria de Destinatario")
 
 
 class NatureOfTransferToThirdCountry(List):
     class Meta:
-        verbose_name = _("Nature of Transfer to third-country/international organization")
-        verbose_name_plural = _("Natures of Transfer to third-country/international organization")
+        verbose_name = _("Natureza da transferência para um pais terceiro / organizacao internacional")
+        verbose_name_plural = _("Natureza da transferência para um pais terceiro / organizacao internacional")
 
 
 class DataSubjectCategory(List):
-    vulnerable = models.BooleanField(verbose_name=_("Vulnerable Category"),
-                                     help_text=_("Indicates whether the data subjects are considered a vulnerable category. "
-                                         "Mark this flag if the data subjects involved are in a situation in which there is a lack of "
-                                         "parity in the relationship between the data subject and the controller, such as children, employees, patients, etc."
-                                         "Unmark this flag if none of the categories as mentioned above are involved."))
+    vulnerable = models.BooleanField(verbose_name=_("Categoria Vulneravel"),
+                                     help_text=_("Indica se os titulares dos dados sao considerados uma categoria vulneravel. "
+                                         "Marque este sinalizador se os titulares dos dados envolvidos estiverem em uma situacao em que haja falta de "
+                                         "paridade na relacao entre o titular dos dados e o controlador, como filhos, funcionarios, pacientes, etc."
+                                         "Desmarque este sinalizador se nenhuma das categorias mencionadas acima estiver envolvida."))
 
     class Meta:
-        verbose_name = _("Data Subject Category")
-        verbose_name_plural = _("Data Subject Categories")
+        verbose_name = _("Categoria de Assunto de Dados")
+        verbose_name_plural = _("Categoria de Assunto de Dados")
 
 
 class ThirdParty(Organization):
     category =  models.ForeignKey(RecipientCategory, on_delete=models.DO_NOTHING,
-                                  verbose_name=_("Category"),
-                                  help_text=_("In the context of consent-base processing, to comply with Articles 13 and 14 "
-                                  "of the GDPR, controllers will need to provide a full list of recipients or categories of recipients including processors."))
+                                  verbose_name=_("Categoria"),
+                                  help_text=_("No contexto do processamento da base de consentimento, para cumprir o artigo 7"
+                                  "do LGPD, os controladores precisarão fornecer uma lista completa de destinatários ou categorias de destinatarios, incluindo processadores."))
     third_country_transfer = models.ForeignKey(NatureOfTransferToThirdCountry, blank=True, null=True, on_delete=models.DO_NOTHING,
-                                               verbose_name=_("Nature of Transfer to third-country/international organization"),
-                                               help_text=_("Please specify why the data is transferred to this third-country/international organization"))
-    appropriate_safeguards = models.TextField(verbose_name=_("Appropriate Data Safeguards"), blank=True,
-                                              help_text=_("In case of data transfer to a third country/international "
-                                              "organization & transfer based on GDPR Article 49(2), list the documents that "
-                                              "clarify the appropriate safeguards and where these documents are stored."))
+                                               verbose_name=_("Natureza da transferencia para um pais terceiro / organizacao internacional"),
+                                               help_text=_("Especifique por que os dados sao transferidos para este pais terceiro / organizacao internacional"))
+    appropriate_safeguards = models.TextField(verbose_name=_("Protecao de dados apropriada"), blank=True,
+                                              help_text=_("Em caso de transferencia de dados para um terceiro pais / organizacao internacional "
+                                              "organizacao e transferencia com base no Artigo 33 da LGPD, liste os documentos que "
+                                              "esclarecer as salvaguardas apropriadas e onde esses documentos são armazenados."))
 
     def get_hints(self):
         hints = super().get_hints()
         if self.third_country_transfer:
             hints.extend(self.third_country_transfer.get_hints())
             if not self.appropriate_safeguards:
-                hints.append(Hint(obj=self, text=_("No appropriate safeguards have been specified for third-country/international data transfers"), hint_type='issue'))
+                hints.append(Hint(obj=self, text=_("Nenhuma salvaguarda apropriada foi especificada para transferências de dados de países terceiros / internacionais"), hint_type='issue'))
         return hints
 
     def clean(self):
         # TODO: add other validation, e.g., EU country/international
         if self.third_country_transfer and (not (self.third_country or self.international)):
-            raise ValidationError(_("This organization is not marked as third country or international. If you want to set the nature of transfer to third country/international organization, please first flag one of these fields."))
+            raise ValidationError(_("Esta Empresa nao esta marcada como pais terceiro ou internacional. Se voce deseja definir a natureza da transferencia para um pais terceiro / organizacao internacional, primeiro marque um destes campos."))
 
     class Meta:
-        verbose_name = _("Third-party Organization")
-        verbose_name_plural = _("Third-party Organizations")
+        verbose_name = _("Empresa Terceirizada / Transferencia Internacional")
+        verbose_name_plural = _("Empresa Terceirizada / Transferencia Internacional")
 
 class AuditUser(Base):
     user = models.OneToOneField(User, verbose_name=_("Registered User"), on_delete=models.CASCADE)
@@ -275,15 +275,15 @@ class AuditUser(Base):
         abstract = True
 
 class DataProtectionOfficer(AuditUser):
-    address = models.CharField(max_length=50, verbose_name=_("Address"))
-    telephone = models.CharField(max_length=50, verbose_name=_("Telephone"))
-    staff = models.BooleanField(verbose_name=_("Part of Staff"),
-                                help_text=_('Is DPO part of the controller organization staff?'))
+    address = models.CharField(max_length=50, verbose_name=_("Endereco"))
+    telephone = models.CharField(max_length=50, verbose_name=_("Telefone"))
+    staff = models.BooleanField(verbose_name=_("Membro da equipe"),
+                                help_text=_('O DPO faz parte da equipe da empresa do controlador?'))
 
     def get_hints(self):
         hints = super().get_hints()
         if self.staff:
-            hints.append(Hint(obj=self, text=_("DPO is part of the staff of the controller organization. You should be able to demonstrate that the DPO is an independent person."), hint_type='warning'))
+            hints.append(Hint(obj=self, text=_("O DPO faz parte da equipe da empresa controladora. Voce deve ser capaz de demonstrar que o DPO ser uma pessoa independente."), hint_type='warning'))
         return hints
 
     class Meta:
@@ -293,20 +293,20 @@ class DataProtectionOfficer(AuditUser):
 
 class DPIA(PDFDocument):
     class Meta:
-        verbose_name = _("Data protection Impact Assessment (DPIA)")
-        verbose_name_plural = _("Data protection Impact Assessments (DPIAs)")
+        verbose_name = _("Relatorio de Impacto a Protecao de Dados. (DPIA / RIPD)")
+        verbose_name_plural = _("Relatorio de Impacto a Protecao de Dados. (DPIAs / RIPDs)")
 
 
 class DataSubjectRights(PDFDocument):
     class Meta:
-        verbose_name = _("Data Subject Rights Document")
-        verbose_name_plural = _("Data Subject Rights Documents")
+        verbose_name = _("Documento de direitos do titular dos dados")
+        verbose_name_plural = _("Documento de direitos do titular dos dados")
 
 
 class ProcessorContract(PDFDocument):
     processor = models.ForeignKey(ThirdParty, on_delete=models.DO_NOTHING,
-                                     verbose_name=_("Processor"),
-                                     help_text=_("Third-party organization with which the Contract has been signed."))
+                                     verbose_name=_("Processador"),
+                                     help_text=_("Empresa terceirizada com a qual o Contrato foi assinado."))
 
     def get_hints(self):
         hints = super().get_hints()
@@ -314,15 +314,15 @@ class ProcessorContract(PDFDocument):
         return hints
 
     class Meta:
-        verbose_name = _("Processor Contract")
-        verbose_name_plural = _("Processor Contracts")
+        verbose_name = _("Contrato do Processador")
+        verbose_name_plural = _("Contratos do Processador")
 
 
 RISK_CHOICES = (
-                (0, _("Unknown")),
-                (1, _("Low")),
-                (2, _("Mid")),
-                (3, _("High")),
+                (0, _("Desconhecido")),
+                (1, _("Baixo")),
+                (2, _("Medio")),
+                (3, _("Alto")),
                 )
 
 class CommonRiskHint:
@@ -330,19 +330,19 @@ class CommonRiskHint:
     def get_hints(self):
         hints = super().get_hints()
         if self.risk == 0:
-            hints.append(Hint(obj=self, text=_("Unknown risk to personal data for"), hint_type='issue'))
+            hints.append(Hint(obj=self, text=_("Risco desconhecido para os dados pessoais para"), hint_type='issue'))
         if not self.data_set.count():
-            hints.append(Hint(obj=self, text=_("No data audit for"), hint_type='error'))
+            hints.append(Hint(obj=self, text=_("Sem auditoria de dados para"), hint_type='error'))
         if not self.risk_mitigation:
-            hints.append(Hint(obj=self, text=_("No description of risk mitigation measures for"), hint_type='warning'))
+            hints.append(Hint(obj=self, text=_("Nenhuma descricao de medidas de mitigacao de risco para"), hint_type='warning'))
         return hints
 
 class DataManagementPolicy(NameDesc, CommonRiskHint):
     processor_contracts = models.ManyToManyField(ProcessorContract,
-                                    verbose_name=_("Data Processor Contracts"),
+                                    verbose_name=_("Contratos do processador de dados"),
                                     help_text=_(
-                                        "If the data is ACTUALLY transferred to OTHER organizations (e.g., Data Processors), "
-                                        "please upload the contract that regulates this data transfer, and relevant information about each third-party organization."),
+                                        "Se os dados forem REALMENTE transferidos para OUTRAS organizações (por exemplo, processadores de dados), "
+                                        "faca upload do contrato que regula esta transferência de dados e informacoes relevantes sobre cada empresa terceirizada.."),
                                     blank=True)
     retention = models.IntegerField(null=True, blank=True, verbose_name=_("Retention period for the processed data, in Days"))
     risk_mitigation = models.TextField(blank=True, verbose_name=_("Risk Mitigation Measures"),
@@ -624,7 +624,7 @@ class BusinessProcess(NameDesc):
 class YourOrganization(Organization):
     officer = models.ForeignKey(DataProtectionOfficer, null=True, blank=True, on_delete=models.DO_NOTHING,
                                 verbose_name=_("Data Protection Officer (DPO)"),
-                                help_text=_("Please insert the Data Protection Officer (if any). A data protection officer (DPO) may be mandatory for "
+                                help_text=_("Please insert the Data Protection Officer (caso exista). A data protection officer (DPO) may be mandatory for "
                                 "public authorities, or if certain types of processing activities are carried out by the organization. The DPO must be independent, an expert in data protection, adequately "
                                 "resourced, and report to the highest management level."))
     business = models.ManyToManyField(BusinessProcess, blank=True,

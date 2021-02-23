@@ -63,13 +63,18 @@ class IndexDashboard(Dashboard):
             _('Support'),
             children=[
                 {
-                    'title': _('Como funciona'),
+                    'title': _('HOW TO WORK'),
                     'url': reverse('data_audit'),
                     'external': True,
                 },
                 {
-                    'title': _('LGPD Site'),
-                    'url': 'http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm'
+                    'title': _('Pluribus One Technology'),
+                    'url': 'https://gdpr.pluribus-one.it/{}/technology'.format(context.get('request').LANGUAGE_CODE),
+                    'external': True,
+                },
+                {
+                    'title': _('Pluribus One Services'),
+                    'url': 'https://gdpr.pluribus-one.it/{}/services'.format(context.get('request').LANGUAGE_CODE),
                     'external': True,
                 },
             ],

@@ -344,7 +344,7 @@ class DataManagementPolicy(NameDesc, CommonRiskHint):
                                         "Se os dados forem REALMENTE transferidos para OUTRAS organizações (por exemplo, processadores de dados), "
                                         "faca upload do contrato que regula esta transferência de dados e informacoes relevantes sobre cada empresa terceirizada.."),
                                     blank=True)
-    retention = models.IntegerField(null=True, blank=True, verbose_name=_("Retention period for the processed data, in Days"))
+    retention = models.IntegerField(null=True, blank=True, verbose_name=_("Período de retenção para os dados processados, em dias"))
     risk_mitigation = models.TextField(blank=True, verbose_name=_("Risk Mitigation Measures"),
                                         help_text=_("Information about the risk mitigation measures related to the data processing, against Data Breaches."))
     risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Residual Risk"), choices=RISK_CHOICES,

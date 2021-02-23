@@ -79,7 +79,7 @@ class HintList:
 
 
 class Base(models.Model):
-    last_update = models.DateTimeField(auto_now=True, verbose_name=_("Ultima atualizacao"))
+    last_update = models.DateTimeField(auto_now=True, verbose_name=_("Última atualização"))
 
     def get_hints(self):
         return HintList()
@@ -117,7 +117,7 @@ class Organization(NameDesc):
     country = models.CharField(max_length=200, verbose_name=_("País"))
     telephone = models.CharField(max_length=50, verbose_name=_("Telefone"))
     statute = models.CharField(max_length=200, verbose_name=_("Estatuto"))
-    third_country = models.BooleanField(verbose_name=_("País Terceiro - Transferência Internacioanl"), help_text=_("Marque este campo se a organização residir em um país fora do território Nacional"))
+    third_country = models.BooleanField(verbose_name=_("Transferência Internacioanl"), help_text=_("Marque este campo se a organização residir em um país fora do território Nacional"))
     international = models.BooleanField(verbose_name=_("Internacional"), help_text=_("Marque este campo se a organização e seus órgãos subordinados são regidos pelo direito internacional público"))
 
     class Meta:
@@ -127,14 +127,14 @@ def media_file_name(instance, filename):
     return 'documents/{}.pdf'.format(instance.name)
 
 class PDFDocument(NameDesc):
-    document = models.FileField(verbose_name=_("Arquivo de documento"), upload_to=media_file_name)
+    document = models.FileField(verbose_name=_("Upload de arquivo/documento"), upload_to=media_file_name)
     md5sum = models.CharField(blank=True, verbose_name=_("MD5Sum"), max_length=36)
 
     def clean(self): # PDF file validation
         try:
             PyPDF2.PdfFileReader(self.document)
         except Exception as e:
-            raise ValidationError(_("Somente arquivos PDF sao aceitos"))
+            raise ValidationError(_("Somente arquivos PDF são aceitos"))
 
     def save(self, *args, **kwargs):
         if not self.pk:  # file is new
@@ -168,26 +168,26 @@ class List(NameDesc):
 
 class ProcessingLegal(List):
     class Meta:
-        verbose_name = _("Base Legal para Processamento")
-        verbose_name_plural = _("Base Legal para Processamento")
+        verbose_name = _("Base Legal para Tratamento")
+        verbose_name_plural = _("Base Legal para Tratamento")
 
 
 class ProcessingPurpose(List):
     class Meta:
-        verbose_name = _("Objetivo do Processamento")
-        verbose_name_plural = _("Objetivo do Processamento")
+        verbose_name = _("Objetivo do Tratamento")
+        verbose_name_plural = _("Objetivo do Tratamento")
 
 
 class ProcessingType(List):
     class Meta:
-        verbose_name = _("Tipo de Processamento")
-        verbose_name_plural = _("Tipo de Processamento")
+        verbose_name = _("Tipo de Tratamento")
+        verbose_name_plural = _("Tipo de Tratamento")
 
 
 class DataCategory(List):
     special = models.BooleanField(verbose_name=_("Categoria Especial"),
                                   help_text=_("Marque este campo se a categoria de dados for especial. "
-                                  "O processamento desta categoria de dados normalmente é proibido."))
+                                  "O Tratamento desta categoria de dados normalmente é proibido."))
 
     class Meta:
         verbose_name = _("Categoria de Dados Funcionais")
@@ -196,17 +196,17 @@ class DataCategory(List):
 
 class ProcessingActivityClassificationDocument(PDFDocument):
     class Meta:
-        verbose_name = _("Documento de Classificação de Atividades de Processamento")
-        verbose_name_plural = _("Documento de Classificação de Atividades de Processamento")
+        verbose_name = _("Documento de Classificação de Atividades de Tratamento")
+        verbose_name_plural = _("Documento de Classificação de Atividades de Tratamento")
 
 
 class ProcessingActivityClassificationLevel(List):
     document = models.ForeignKey(ProcessingActivityClassificationDocument, null=True, on_delete=models.DO_NOTHING,
-                                 verbose_name=_("Documento de Classificação de Atividades de Processamento"))
+                                 verbose_name=_("Documento de Classificação de Atividades de Tratamento"))
 
     class Meta:
-        verbose_name = _("Nivel de Classificação da atividade de processamento")
-        verbose_name_plural = _("Nivel de Classificação da atividade de processamento")
+        verbose_name = _("Nivel de Classificação da atividade de Tratamento")
+        verbose_name_plural = _("Nivel de Classificação da atividade de Tratamento")
 
 
 class RecipientCategory(List):
@@ -236,7 +236,7 @@ class DataSubjectCategory(List):
 class ThirdParty(Organization):
     category =  models.ForeignKey(RecipientCategory, on_delete=models.DO_NOTHING,
                                   verbose_name=_("Categoria"),
-                                  help_text=_("No contexto do processamento da base de consentimento, para cumprir o artigo 7"
+                                  help_text=_("No contexto do Tratamento da base de consentimento, para cumprir o artigo 7"
                                   "do LGPD, os controladores precisarão fornecer uma lista completa de destinatários ou categorias de destinatarios, incluindo processadores."))
     third_country_transfer = models.ForeignKey(NatureOfTransferToThirdCountry, blank=True, null=True, on_delete=models.DO_NOTHING,
                                                verbose_name=_("Natureza da transferencia para um pais terceiro / organizacao internacional"),
@@ -346,7 +346,7 @@ class DataManagementPolicy(NameDesc, CommonRiskHint):
                                     blank=True)
     retention = models.IntegerField(null=True, blank=True, verbose_name=_("Período de retenção para os dados processados, em dias"))
     risk_mitigation = models.TextField(blank=True, verbose_name=_("Medidas de mitigação de risco"),
-                                        help_text=_("Informações sobre as medidas de mitigação de risco relacionadas ao processamento de dados, contra violações de dados."))
+                                        help_text=_("Informações sobre as medidas de mitigação de risco relacionadas ao Tratamento de dados, contra violações de dados."))
     risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Residual Risk"), choices=RISK_CHOICES,
                                             help_text=_("Indique o risco residual para os direitos e liberdades fundamentais dos titulares dos dados, "
                                             "dadas as medidas de mitigação que foram postas em prática."))
@@ -452,17 +452,17 @@ class Data(NameDesc):
                                    on_delete=models.DO_NOTHING,)
     dpia = models.ForeignKey(DPIA, null=True, blank=True, on_delete=models.DO_NOTHING,
                              verbose_name=_("Relatório de Impacto à Proteção de Dados"),
-                             help_text=_("Se a atividade de processamento provavelmente envolve um alto risco para o fundamental "
+                             help_text=_("Se a atividade de Tratamento provavelmente envolve um alto risco para o fundamental "
                                          "direitos e liberdades dos titulares dos dados, um DPIA deve ser preenchido (LGPD Artigo 5, XVII)."))
 
     def get_processing_activities(self):
         return ", ".join([a.name for a in self.processingactivity_set.all()])
-    get_processing_activities.short_description = _("Atividades de processamento")
+    get_processing_activities.short_description = _("Atividades de Tratamento")
 
     def get_hints(self):
         hints = super().get_hints()
         if not self.processingactivity_set.count():
-            hints.append(Hint(obj=self, text=_("Nenhuma atividade de processamento associada a"), hint_type='error'))
+            hints.append(Hint(obj=self, text=_("Nenhuma atividade de Tratamento associada a"), hint_type='error'))
         if not self.management:
             hints.append(Hint(obj=self, text=_("Nenhuma política de gerenciamento de dados especificada para"), hint_type='issue'))
         else:
@@ -501,27 +501,27 @@ class ProcessingActivity(NameDesc):
     purpose = models.ForeignKey(ProcessingPurpose, on_delete=models.DO_NOTHING,
                                 verbose_name=_("Propósito"))
     proc_type = models.ForeignKey(ProcessingType, on_delete=models.DO_NOTHING,
-                                  verbose_name=_("Tipo de Processamento"),)
+                                  verbose_name=_("Tipo de Tratamento"),)
     start_date = models.DateField(null=True, blank=True,
                                   verbose_name=_("Data de início"),)
     end_date = models.DateField(null=True, blank=True,
                                 verbose_name=_("Data final"),
-                                help_text=_("Data de término do processamento, se aplicável. Ao preencher esta data, você declara que o processamento cessa a partir dessa data."))
+                                help_text=_("Data de término do Tratamento, se aplicável. Ao preencher esta data, você declara que o Tratamento cessa a partir dessa data."))
     legal = models.ForeignKey(ProcessingLegal, on_delete=models.DO_NOTHING,
-                              verbose_name=_("Base Legal para Processamento"),
-                              help_text=_("Qual é a base legal para o processamento? É obrigatório!"))
-    technology = models.TextField(blank=True, verbose_name=_("Tecnologia"), help_text=_("Como a atividade é realizada. Descrição das tecnologias, aplicativos e software empregados na atividade de processamento."), null=True)
+                              verbose_name=_("Base Legal para Tratamento"),
+                              help_text=_("Qual é a base legal para o Tratamento? É obrigatório!"))
+    technology = models.TextField(blank=True, verbose_name=_("Tecnologia"), help_text=_("Como a atividade é realizada. Descrição das tecnologias, aplicativos e software empregados na atividade de Tratamento."), null=True)
     alternate_activity = models.ForeignKey('self', null=True, blank=True, on_delete=models.DO_NOTHING,
                                            verbose_name=_("Atividade Alternativa"),
-                                           help_text=_("Quando apropriado, faça referência à atividade de processamento que substitui a atividade encerrada. Isso cria um histórico no registro. "
-                                            "Isso pode ser útil quando a base jurídica de uma atividade de processamento muda, por exemplo, como resultado de uma alteração estatutária."))
+                                           help_text=_("Quando apropriado, faça referência à atividade de Tratamento que substitui a atividade encerrada. Isso cria um histórico no registro. "
+                                            "Isso pode ser útil quando a base jurídica de uma atividade de Tratamento muda, por exemplo, como resultado de uma alteração estatutária."))
     comments = models.TextField(blank=True, verbose_name=_("Comentários"),
-                                help_text=_("Por favor, coloque qualquer comentário na atividade de processamento."))
+                                help_text=_("Por favor, coloque qualquer comentário na atividade de Tratamento."))
 
     classification = models.ForeignKey(ProcessingActivityClassificationLevel,  on_delete=models.DO_NOTHING,
                                        verbose_name=_("Nível de Classfíciação"),
                                        help_text=_("Indique o nível de classificação da "
-                                                  "atividade de processamento de acordo com a empresa"
+                                                  "atividade de Tratamento de acordo com a empresa"
                                                   "sistema de classificação (escolha o mais alto caso vários sejam "
                                                   "envolvidos)."),
                                        null=True,
@@ -553,15 +553,15 @@ class ProcessingActivity(NameDesc):
         try:
             if self.outsourcing.processor == self.get_business_process().get_organization():
                 raise ValidationError(
-                    _("A terceirização prefigura a atribuição da atividade de processamento a outra organização"))
+                    _("A terceirização prefigura a atribuição da atividade de Tratamento a outra organização"))
         except ValidationError:
             raise
         except:
             pass
 
     class Meta:
-        verbose_name = _("Atividade de processamento")
-        verbose_name_plural = _("Atividades de processamentos")
+        verbose_name = _("Atividade de Tratamento")
+        verbose_name_plural = _("Atividades de Tratamentos")
 
 class BusinessOwner(AuditUser):
 
@@ -583,8 +583,8 @@ class BusinessProcess(NameDesc):
                               verbose_name=_("Process Owner"),
                               help_text=_("Indique quem é responsável e gerencia este processo de negócios."))
     activities = models.ManyToManyField(ProcessingActivity, blank=True,
-                                        verbose_name=_("Atividades de processamento"),
-                                        help_text=_("Você deve inserir todas as atividades de processamento que podem manipular dados pessoais como parte do processo de negócios (por exemplo, Coleta de Curriculum Vitae"))
+                                        verbose_name=_("Atividades de Tratamento"),
+                                        help_text=_("Você deve inserir todas as atividades de Tratamento que podem manipular dados pessoais como parte do processo de negócios (por exemplo, Coleta de Curriculum Vitae"))
 
     def get_organization(self):
         try:
@@ -613,7 +613,7 @@ class BusinessProcess(NameDesc):
             for activity in self.activities.all():
                 hints.extend(activity.get_hints())
         else:
-            hints.append(Hint(obj=self, text=_("Especifique pelo menos uma atividade de processamento para"), hint_type='suggestion'))
+            hints.append(Hint(obj=self, text=_("Especifique pelo menos uma atividade de Tratamento para"), hint_type='suggestion'))
         return hints
 
     class Meta:
@@ -625,7 +625,7 @@ class YourOrganization(Organization):
     officer = models.ForeignKey(DataProtectionOfficer, null=True, blank=True, on_delete=models.DO_NOTHING,
                                 verbose_name=_("Data Protection Officer (DPO)"),
                                 help_text=_("Por favor, insira o Data Protection Officer (caso exista). Um Data Protection Officers (DPO) pode ser obrigatório para "
-                                "autoridades públicas, ou se determinados tipos de atividades de processamento são realizados pela organização. O DPO deve ser independente, um especialista em proteção de dados, de forma adequada "
+                                "autoridades públicas, ou se determinados tipos de atividades de Tratamento são realizados pela organização. O DPO deve ser independente, um especialista em proteção de dados, de forma adequada "
                                 "com recursos e reportar ao mais alto nível de gestão e administração."))
     business = models.ManyToManyField(BusinessProcess, blank=True,
                                       verbose_name=_("Processo de negócio"),
@@ -638,7 +638,7 @@ class YourOrganization(Organization):
                                          "Marque este campo se as atividades principais da organização exigem monitoramento em larga escala, regular e sistemático de indivíduos (por exemplo, rastreamento de comportamento online)"))
     special_category = models.BooleanField(verbose_name=_("Dados Especiais"),
                                      help_text=_(
-                                         "Marque este campo se as atividades principais da organização consistirem no processamento em grande escala de dados de categorias especiais ou dados relacionados a condenações criminais e crimes"))
+                                         "Marque este campo se as atividades principais da organização consistirem no Tratamento em grande escala de dados de categorias especiais ou dados relacionados a condenações criminais e crimes"))
 
 
     def __init__(self, *args, **kwargs):
@@ -668,7 +668,7 @@ class YourOrganization(Organization):
             elif self.monitoring:
                 text = _("Quando o monitoramento sistemático e em grande escala de indivíduos é realizado como atividade principal, as Organizações ")
             elif self.special_category:
-                text = _("Quando o processamento em grande escala de dados especiais sobre indivíduos é realizado como atividade principal, Organizações ")
+                text = _("Quando o Tratamento em grande escala de dados especiais sobre indivíduos é realizado como atividade principal, Organizações ")
             hints.append(Hint(obj=self, text=_("{} deve nomear um Data Protection Officer").format(text), hint_type='issue'))
         if self.business.count():
             for process in self.business.all():

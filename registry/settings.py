@@ -116,7 +116,7 @@ LANGUAGES = (
     ('pt-br', 'Portugues Brasileiro'),
 )
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'America/Sao_Paulo'
 

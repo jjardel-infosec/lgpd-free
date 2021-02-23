@@ -160,7 +160,7 @@ class MyDocTemplate(BaseDocTemplate):
         scale(drawing, scaling_factor=0.3)
         renderPDF.draw(drawing, canvas, self.w/2 - (drawing.width / 2), self.h/2)
         canvas.setFont('Helvetica', 8)
-        canvas.drawString(self.margin, self.margin, "Primeira Pagina / LGPD Web App")
+        canvas.drawString(self.margin, self.margin, "Primeira Página / LGPD Web App")
         canvas.restoreState()
 
     def laterPages(self, canvas, doc):
@@ -183,7 +183,7 @@ class PDFReport:
     """Report document in PDF"""
 
     def __init__(self, org, margin=3*cm, sep=0.2*cm):
-        self.title = _("LGPD - Registro de atividades de processamento")
+        self.title = _("LGPD - Registro de atividades de tratamento")
         self.org = org
         self.margin = margin
         self.pdf = None
@@ -309,7 +309,7 @@ class PDFReport:
                         for cat in data.subject_category.all():
                             self.elements.append(Table(get_data(cat, exclude_fields={})))
                         if not data.subject_category.count():
-                            self.elements.append(Paragraph(_("<em>Nao existem categorias de titulares de dados para os dados (!)</em>"), self.style['Normal']))
+                            self.elements.append(Paragraph(_("<em>Não existem categorias de titulares de dados para os dados (!)</em>"), self.style['Normal']))
 
                         self.doHeading(_("%s > %s > %s > Politica de Gestão de Dados") % (process.name, activity.name, data.name), 5)
                         if data.management:
@@ -319,7 +319,7 @@ class PDFReport:
                                 self.elements.append(Table(get_data(contract, exclude_fields={'processor', 'pdfdocument_ptr'})))
                                 self.elements.append(Table(get_data(contract.processor, exclude_fields={})))
                             if not data.management.processor_contracts.count():
-                                self.elements.append(Paragraph(_("<em>Soa bem. Sem transferência de dados.</em>"), self.style['Normal']))
+                                self.elements.append(Paragraph(_("<em>Isso é bom. Sem transferência de dados.</em>"), self.style['Normal']))
                         else:
                             self.elements.append(Paragraph(_("<em>Nenhuma politica de gestão para os dados (!)</em>"), self.style['Normal']))
 

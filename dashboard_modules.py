@@ -13,7 +13,7 @@ class Stat(DashboardModule):
     def init_with_context(self, context):
         hints = HintList()
         if not YourOrganization.objects.count():
-            link = admin_add_link('yourorganization', _("First time here? Click to add your organization in the registry"))
+            link = admin_add_link('yourorganization', _("Primeira vez aqui? Clique para adicionar uma/sua empresa/organização no sistema"))
             hints.append(Hint(obj="", hint_type='suggestion',
                         text=link))
 
@@ -21,7 +21,7 @@ class Stat(DashboardModule):
             for i, org in enumerate(YourOrganization.objects.all()):
                 if not i:
                     link = admin_changelist_link(org,
-                                          _("Click here to see all organizations in the registry and generate a PDF report for each one"))
+                                          _("Clique aqui para ver todas as empresas/organizações do sistema e gerar um relatório em PDF para cada uma"))
                     hints.append(Hint(obj="", hint_type='suggestion',
                                       text=link))
                 hints.extend(org.get_hints())
@@ -29,5 +29,5 @@ class Stat(DashboardModule):
             suggestions = hints.list['suggestion']
             if not suggestions:
                 hints.append(Hint(obj="", hint_type='suggestion',
-                                 text=_("GDPR is a continuous process. Make sure that all your business processes and processing activities that manage personal data are updated in this registry.")))
+                                 text=_("O LGPD é um processo contínuo. Certifique-se de que todos os seus processos de negócios e atividades de tratamento/processamento de dados que gerenciam dados pessoais sejam atualizados neste registro.")))
         self.children = hints

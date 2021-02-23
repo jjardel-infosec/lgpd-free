@@ -144,7 +144,7 @@
       {
         "name": "Registros do governo",
         "description": null,
-        "descricao": "Gestao da correspondencia entre o servico publico e as pessoas que se comunicaram voluntariamente com o servico. Gestao de dados de pessoas com quem o servico publico nao mantem uma relacao lucrativa.",
+        "description": "Gestao da correspondencia entre o servico publico e as pessoas que se comunicaram voluntariamente com o servico. Gestao de dados de pessoas com quem o servico publico nao mantem uma relacao lucrativa.",
         "article": null,
         "url": ""
       }
@@ -406,7 +406,7 @@
       }
     ]
   },
-  "Base para processamento": {
+  "Basis for Processing": {
     "Generico": [
       {
         "name": "Consentimento do titular dos dados",

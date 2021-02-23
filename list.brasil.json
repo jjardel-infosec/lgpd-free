@@ -282,7 +282,7 @@
       },
       {
         "name": "Avaliacao do atendimento ao paciente",
-        "description": "Coleta e processamento de todos os dados relativos aos diagnosticos medicos e paramedicos, bem como às praticas terapeuticas prestadas aos pacientes com o objetivo de melhorar a qualidade das praticas de atendimento.",
+        "description": "Coleta e processamento de todos os dados relativos aos diagnosticos medicos e paramedicos, bem como as praticas terapeuticas prestadas aos pacientes com o objetivo de melhorar a qualidade das praticas de atendimento.",
         "article": null,
         "url": ""
       },
@@ -326,31 +326,31 @@
       },
       {
         "name": "Gestao de patrimonio",
-        "description": "Refere-se à totalidade das acoes realizadas por um banco, de forma discricionaria ou nao, no aconselhamento ao cliente na gestao do seu patrimonio.",
+        "description": "Refere-se a totalidade das acoes realizadas por um banco, de forma discricionaria ou nao, no aconselhamento ao cliente na gestao do seu patrimonio.",
         "article": null,
         "url": ""
       },
       {
         "name": "Financas corporativas",
-        "description": "Prestacao de servicos relacionados à distribuicao de capital, venda de acoes, incorporacoes e incorporacoes.",
+        "description": "Prestacao de servicos relacionados a distribuicao de capital, venda de acoes, incorporacoes e incorporacoes.",
         "article": null,
         "url": ""
       },
       {
         "name": "Emprestimo",
-        "description": "Refere-se à totalidade das acoes relacionadas com a estimativa dos riscos incorridos por um banco na concessao de credito, independentemente da natureza do credito.",
+        "description": "Refere-se a totalidade das acoes relacionadas com a estimativa dos riscos incorridos por um banco na concessao de credito, independentemente da natureza do credito.",
         "article": null,
         "url": ""
       },
       {
         "name": "Administracao de credito",
-        "description": "Refere-se às acoes relacionadas ao monitoramento e reembolso de saldos credores, incluindo sinistros, e as acoes relacionadas a esses sinistros, independentemente do envolvimento de terceiros.",
+        "description": "Refere-se as acoes relacionadas ao monitoramento e reembolso de saldos credores, incluindo sinistros, e as acoes relacionadas a esses sinistros, independentemente do envolvimento de terceiros.",
         "article": null,
         "url": ""
       },
       {
         "name": "Visao geral do cliente global",
-        "description": "A integracao da totalidade ou de parte dos dados processados no contexto de uma das finalidades especificas do setor bancario. Com a finalidade de se chegar a uma conclusao sobre a rentabilidade geral dos clientes e se devem ser oferecidos produtos ou servicos bancarios customizados às suas necessidades e que auxiliem a instituicao bancaria, de uma forma geral, a tomar as decisoes necessarias em relacao aos seus clientes. ",
+        "description": "A integracao da totalidade ou de parte dos dados processados no contexto de uma das finalidades especificas do setor bancario. Com a finalidade de se chegar a uma conclusao sobre a rentabilidade geral dos clientes e se devem ser oferecidos produtos ou servicos bancarios customizados as suas necessidades e que auxiliem a instituicao bancaria, de uma forma geral, a tomar as decisoes necessarias em relacao aos seus clientes. ",
         "article": null,
         "url": ""
       },
@@ -515,7 +515,7 @@
       },
       {
         "name": "Emprestimos, hipotecas, linhas de credito",
-        "description": "Natureza do emprestimo, montante emprestado, saldo remanescente, data de inicio, periodo do emprestimo, taxa de juros, visao geral do pagamento, detalhes relativos às garantias.",
+        "description": "Natureza do emprestimo, montante emprestado, saldo remanescente, data de inicio, periodo do emprestimo, taxa de juros, visao geral do pagamento, detalhes relativos as garantias.",
         "article": null,
         "url": "",
         "special": false
@@ -789,7 +789,7 @@
     "Dados sobre Saude": [
       {
         "name": "Dados de saude fisica",
-        "description": "Arquivo medico, relatorio medico, informacoes diagnosticas, tratamento, resultados de analises, deficiencia ou enfermidade, dieta alimentar; outras demandas especiais relacionadas à saude no gerenciamento de uma viagem ou residencia.",
+        "description": "Arquivo medico, relatorio medico, informacoes diagnosticas, tratamento, resultados de analises, deficiencia ou enfermidade, dieta alimentar; outras demandas especiais relacionadas a saude no gerenciamento de uma viagem ou residencia.",
         "article": null,
         "url": "",
         "special": false
@@ -1104,7 +1104,7 @@
         "special": true
       },
       {
-        "name": "Dados relacionados à vida sexual ou orientacao sexual de alguem",
+        "name": "Dados relacionados a vida sexual ou orientacao sexual de alguem",
         "description": "Vida sexual ou orientacao sexual",
         "article": 9.0,
         "url": "http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/L13709.htm",

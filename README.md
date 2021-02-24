@@ -3,6 +3,10 @@
 
 Welcome to the repository. This repository is a fork, being translated and configured for use with the pt-be language
 
+## Donate
+I am currently unemployed. If you are interested in making a donation via pix, you can use CPF 05966998671. In the name of José Jardel
+
+
 ## Goals
 To manage the whole LGPD process, you need a central point where information about LGPD procedures are stored and can be updated on a regular basis by dedicated personnel, including your Data Protection Officer. 
 
@@ -114,7 +118,7 @@ Open a shell and insert the following commands:
     sudo a2enconf sample.apache.security
 
 ### Updates
-You can update your installation anytime to the latest version using the following commands (open a shell in the installation folder: **/home/gdpr/gdpr-registry-app**):
+You can update your installation anytime to the latest version using the following commands (open a shell in the installation folder: **/home/lgpd/lgpd-free**):
 
     git pull
     python manage.py makemigrations axes audit jet dashboard
@@ -122,5 +126,3 @@ You can update your installation anytime to the latest version using the followi
     python manage.py populate
     python manage.py collectstatic
 
-## Donate
-I am currently unemployed. If you are interested in making a donation via pix, you can use CPF 05966998671. In the name of José Jardel

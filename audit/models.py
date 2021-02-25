@@ -116,7 +116,7 @@ class Organization(NameDesc):
     address = models.CharField(max_length=50, verbose_name=_("Endereço"))
     country = models.CharField(max_length=200, verbose_name=_("País"))
     telephone = models.CharField(max_length=50, verbose_name=_("Telefone"))
-    statute = models.CharField(max_length=200, verbose_name=_("Estatuto"))
+    statute = models.CharField(max_length=200, verbose_name=_("Regulamento"))
     third_country = models.BooleanField(verbose_name=_("Transferência Internacioanl"), help_text=_("Marque este campo se a organização residir em um país fora do território Nacional"))
     international = models.BooleanField(verbose_name=_("Internacional"), help_text=_("Marque este campo se a organização e seus órgãos subordinados são regidos pelo direito internacional público"))
 
@@ -257,11 +257,11 @@ class ThirdParty(Organization):
     def clean(self):
         # TODO: add other validation, e.g., EU country/international
         if self.third_country_transfer and (not (self.third_country or self.international)):
-            raise ValidationError(_("Esta Empresa nao esta marcada como pais terceiro ou internacional. Se voce deseja definir a natureza da transferencia para um pais terceiro / organizacao internacional, primeiro marque um destes campos."))
+            raise ValidationError(_("Esta Empresa nao está marcada como pais terceiro ou internacional. Se você deseja definir a natureza da transferencia para um pais terceiro / organizacao internacional, primeiro marque um destes campos."))
 
     class Meta:
-        verbose_name = _("Empresa Terceirizada / Transferencia Internacional")
-        verbose_name_plural = _("Empresa Terceirizada / Transferencia Internacional")
+        verbose_name = _("Empresa Terceirizada / Transferência Internacional")
+        verbose_name_plural = _("Empresa Terceirizada / Transferência Internacional")
 
 class AuditUser(Base):
     user = models.OneToOneField(User, verbose_name=_("Registered User"), on_delete=models.CASCADE)
@@ -334,15 +334,15 @@ class CommonRiskHint:
         if not self.data_set.count():
             hints.append(Hint(obj=self, text=_("Sem auditoria de dados para"), hint_type='error'))
         if not self.risk_mitigation:
-            hints.append(Hint(obj=self, text=_("Nenhuma descricao de medidas de mitigacao de risco para"), hint_type='warning'))
+            hints.append(Hint(obj=self, text=_("Nenhuma descrição de medidas de mitigação de risco para"), hint_type='warning'))
         return hints
 
 class DataManagementPolicy(NameDesc, CommonRiskHint):
     processor_contracts = models.ManyToManyField(ProcessorContract,
                                     verbose_name=_("Contratos do processador de dados"),
                                     help_text=_(
-                                        "Se os dados forem REALMENTE transferidos para OUTRAS organizações (por exemplo, processadores de dados), "
-                                        "faca upload do contrato que regula esta transferência de dados e informacoes relevantes sobre cada empresa terceirizada.."),
+                                        "Se os dados forem REALMENTE transferidos para OUTRAS empresas/organizações (por exemplo, processadores de dados), "
+                                        "faça upload do contrato que regula esta transferência de dados e informações relevantes sobre cada empresa terceirizada.."),
                                     blank=True)
     retention = models.IntegerField(null=True, blank=True, verbose_name=_("Período de retenção para os dados processados, em dias"))
     risk_mitigation = models.TextField(blank=True, verbose_name=_("Medidas de mitigação de risco"),
@@ -372,7 +372,7 @@ class DataManagementPolicy(NameDesc, CommonRiskHint):
             hints.extend(self.subject_rights.get_hints())
         else:
             hints.append(Hint(obj=self,
-                              text=_("Falta descrição dos procedimentos adotados para salvaguardar os direitos dos titulares dos dados em"),
+                              text=_("Falta descrição dos procedimentos adotados para proteger os direitos dos titulares dos dados em"),
                               hint_type='warning'))
         if not self.subject_notification:
             hints.append(Hint(obj=self,
@@ -451,7 +451,7 @@ class Data(NameDesc):
                                         verbose_name=_("Plano de Resposta a Incidentes"),
                                    on_delete=models.DO_NOTHING,)
     dpia = models.ForeignKey(DPIA, null=True, blank=True, on_delete=models.DO_NOTHING,
-                             verbose_name=_("Relatório de Impacto à Proteção de Dados"),
+                             verbose_name=_("Relatório de Impacto à Proteção de Dados (DPIA)"),
                              help_text=_("Se a atividade de Tratamento provavelmente envolve um alto risco para o fundamental "
                                          "direitos e liberdades dos titulares dos dados, um DPIA deve ser preenchido (LGPD Artigo 5, XVII)."))
 

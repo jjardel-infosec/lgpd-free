@@ -114,7 +114,7 @@ class BusinessProcessAdmin(BaseAdmin):
 
     def activity_link(self, obj):
         return self.admin_changelist_count(obj.activities)
-    activity_link.short_description = _("Atividades de processamento")
+    activity_link.short_description = _("Atividades de tratamento")
 
 
 @admin.register(models.DataCategory)
@@ -205,12 +205,12 @@ class ProcessingActivityAdmin(BaseAdmin):
     def business_process(self, obj):
         for o in obj.businessprocess_set.all():
             return admin_change_link(o, o)
-    business_process.short_description = _("Business Process")
+    business_process.short_description = _("Processo de negócio")
 
 
     def data_audit_link(self, obj):
         return self.admin_changelist_count(obj.data_audit)
-    data_audit_link.short_description = _("Data Audits")
+    data_audit_link.short_description = _("Auditoria de Dados")
 
 
 @admin.register(models.DataProtectionOfficer)
@@ -221,7 +221,7 @@ class DataProtectionOfficerAdmin(UserAdmin):
 
     def organizations(self, obj):
         return self.admin_changelist_count(obj.yourorganization_set)
-    organizations.short_description = _("Organizations")
+    organizations.short_description = _("Organizações")
 
 
 @admin.register(models.BusinessOwner)
@@ -230,7 +230,7 @@ class BusinessOwnerAdmin(UserAdmin):
 
     def business(self, obj):
         return self.admin_changelist_count(obj.businessprocess_set)
-    business.short_description = _("Business Processes")
+    business.short_description = _("Processo de negócio")
 
 
 @admin.register(models.ProcessorContract)
@@ -260,7 +260,7 @@ class YourOrganizationAdmin(OrganizationAdmin):
 
     def business_processes(self, obj):
         return self.admin_changelist_count(obj.business)
-    business_processes.short_description = _("Business Processes")
+    business_processes.short_description = _("Processos de Negócios")
 
     def report(self, obj):
         return link(url=reverse('report', kwargs={'org_pk': obj.pk}), target_blank=True, text=_("Criar"))

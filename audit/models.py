@@ -196,13 +196,13 @@ class DataCategory(List):
 
 class ProcessingActivityClassificationDocument(PDFDocument):
     class Meta:
-        verbose_name = _("Documento de Classificação de Atividades de Tratamento")
-        verbose_name_plural = _("Documento de Classificação de Atividades de Tratamento")
+        verbose_name = _("Documento para Classificação de Atividades de Tratamento")
+        verbose_name_plural = _("Documentos para Classificação de Atividades de Tratamento")
 
 
 class ProcessingActivityClassificationLevel(List):
     document = models.ForeignKey(ProcessingActivityClassificationDocument, null=True, on_delete=models.DO_NOTHING,
-                                 verbose_name=_("Documento de Classificação de Atividades de Tratamento"))
+                                 verbose_name=_("Documento para Classificação de Atividades de Tratamento"))
 
     class Meta:
         verbose_name = _("Nivel de Classificação da atividade de Tratamento")
@@ -217,16 +217,16 @@ class RecipientCategory(List):
 
 class NatureOfTransferToThirdCountry(List):
     class Meta:
-        verbose_name = _("Natureza da transferência para um pais terceiro / organizacao internacional")
-        verbose_name_plural = _("Natureza da transferência para um pais terceiro / organizacao internacional")
+        verbose_name = _("Natureza da transferência para um pais terceiro / organizacão internacional")
+        verbose_name_plural = _("Natureza da transferência para um pais terceiro / organizacão internacional")
 
 
 class DataSubjectCategory(List):
     vulnerable = models.BooleanField(verbose_name=_("Categoria Vulnerável"),
                                      help_text=_("Indica se os titulares dos dados sao considerados uma categoria Vulnerável. "
-                                         "Marque este sinalizador se os titulares dos dados envolvidos estiverem em uma situação em que haja falta de "
-                                         "paridade na relação entre o titular dos dados e o controlador, como filhos, funcionarios, pacientes, etc."
-                                         "Desmarque este sinalizador se nenhuma das categorias mencionadas acima estiver envolvida."))
+                                         "Marque esta opção, caso os titulares dos dados envolvidos estiverem em uma situação em que exista falta de "
+                                         "paridade na relação entre o titular dos dados e o controlador, como filhos, funcionários, pacientes, etc."
+                                         "Desmarque esta opção se nenhuma das categorias mencionadas acima estiver envolvida."))
 
     class Meta:
         verbose_name = _("Categoria de Assunto de Dados")
@@ -237,13 +237,13 @@ class ThirdParty(Organization):
     category =  models.ForeignKey(RecipientCategory, on_delete=models.DO_NOTHING,
                                   verbose_name=_("Categoria"),
                                   help_text=_("No contexto do Tratamento da base de consentimento, para cumprir o artigo 7"
-                                  "do LGPD, os controladores precisarão fornecer uma lista completa de destinatários ou categorias de destinatarios, incluindo processadores."))
+                                  "da LGPD, os controladores precisarão fornecer uma lista completa de destinatários ou categorias de destinatarios, incluindo Operadores."))
     third_country_transfer = models.ForeignKey(NatureOfTransferToThirdCountry, blank=True, null=True, on_delete=models.DO_NOTHING,
-                                               verbose_name=_("Natureza da transferencia para um pais terceiro / organizacao internacional"),
-                                               help_text=_("Especifique por que os dados sao transferidos para este pais terceiro / organizacao internacional"))
+                                               verbose_name=_("Natureza da transferência para um país terceiro / organizacão internacional"),
+                                               help_text=_("Especifique por que os dados são transferidos para este país terceiro / organizacão internacional"))
     appropriate_safeguards = models.TextField(verbose_name=_("Protecao de dados apropriada"), blank=True,
-                                              help_text=_("Em caso de transferencia de dados para um terceiro pais / organizacao internacional "
-                                              "organizacao e transferencia com base no Artigo 33 da LGPD, liste os documentos que "
+                                              help_text=_("Em caso de transferência de dados para um terceiro país / organizacão internacional "
+                                              "organizacão e transferência com base no Artigo 33 da LGPD, liste os documentos que "
                                               "esclarecer as salvaguardas apropriadas e onde esses documentos são armazenados."))
 
     def get_hints(self):
@@ -257,7 +257,7 @@ class ThirdParty(Organization):
     def clean(self):
         # TODO: add other validation, e.g., EU country/international
         if self.third_country_transfer and (not (self.third_country or self.international)):
-            raise ValidationError(_("Esta Empresa nao está marcada como pais terceiro ou internacional. Se você deseja definir a natureza da transferencia para um pais terceiro / organizacao internacional, primeiro marque um destes campos."))
+            raise ValidationError(_("Esta Empresa nao está marcada como pais terceiro ou internacional. Se você deseja definir a natureza da transferência para um pais terceiro / organizacão internacional, primeiro marque um destes campos."))
 
     class Meta:
         verbose_name = _("Empresa Terceirizada / Transferência Internacional")
@@ -305,7 +305,7 @@ class DataSubjectRights(PDFDocument):
 
 class ProcessorContract(PDFDocument):
     processor = models.ForeignKey(ThirdParty, on_delete=models.DO_NOTHING,
-                                     verbose_name=_("Processador"),
+                                     verbose_name=_("Operador"),
                                      help_text=_("Empresa terceirizada com a qual o Contrato foi assinado."))
 
     def get_hints(self):
@@ -314,8 +314,8 @@ class ProcessorContract(PDFDocument):
         return hints
 
     class Meta:
-        verbose_name = _("Contrato do Processador")
-        verbose_name_plural = _("Contratos do Processador")
+        verbose_name = _("Contrato do Operador")
+        verbose_name_plural = _("Contratos do Operador")
 
 
 RISK_CHOICES = (
@@ -339,9 +339,9 @@ class CommonRiskHint:
 
 class DataManagementPolicy(NameDesc, CommonRiskHint):
     processor_contracts = models.ManyToManyField(ProcessorContract,
-                                    verbose_name=_("Contratos do processador de dados"),
+                                    verbose_name=_("Contratos do Operador de dados"),
                                     help_text=_(
-                                        "Se os dados forem REALMENTE transferidos para OUTRAS empresas/organizações (por exemplo, processadores de dados), "
+                                        "Se os dados forem REALMENTE transferidos para OUTRAS empresas/organizações (por exemplo, Operadores de dados), "
                                         "faça upload do contrato que regula esta transferência de dados e informações relevantes sobre cada empresa terceirizada.."),
                                     blank=True)
     retention = models.IntegerField(null=True, blank=True, verbose_name=_("Período de retenção para os dados processados, em dias"))
@@ -411,7 +411,7 @@ class DataBreachDetection(NameDesc, CommonRiskHint):
 class DataBreachResponse(NameDesc, CommonRiskHint):
     risk_mitigation = models.TextField(blank=True, verbose_name=_("Medidas de mitigação de risco"),
                                         help_text=_("Informações sobre as medidas de mitigação de risco para a resposta a violações de dados. "
-                                                    "Para este fim, um plano de resposta a incidentes adequado deve ser colocado em prática, incluindo o"
+                                                    "Para este fim, um plano de resposta a incidentes adequado deve ser colocado em prática, incluindo a"
                                                     "notificação obrigatória de violações de dados à autoridade supervisora ​​e todas as partes envolvidas."))
     risk = models.PositiveSmallIntegerField(default=0, verbose_name=_("Risco Residual"), choices=RISK_CHOICES,
                                             help_text=_("Indique o risco residual de não responder adequadamente a uma violação de dados devido à falta de medidas / tecnologia de detecção."))
@@ -452,8 +452,8 @@ class Data(NameDesc):
                                    on_delete=models.DO_NOTHING,)
     dpia = models.ForeignKey(DPIA, null=True, blank=True, on_delete=models.DO_NOTHING,
                              verbose_name=_("Relatório de Impacto à Proteção de Dados (DPIA)"),
-                             help_text=_("Se a atividade de Tratamento provavelmente envolve um alto risco para o fundamental "
-                                         "direitos e liberdades dos titulares dos dados, um DPIA deve ser preenchido (LGPD Artigo 5, XVII)."))
+                             help_text=_("Se a atividade de Tratamento provavelmente envolve um alto risco para os direitos fuundamentais "
+                                         "e liberdades dos titulares dos dados, um DPIA deve ser preenchido (LGPD Artigo 5, XVII)."))
 
     def get_processing_activities(self):
         return ", ".join([a.name for a in self.processingactivity_set.all()])
